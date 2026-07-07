@@ -19,8 +19,8 @@
 /* Frame/Form */
 .Form
 {
-	font :  -nexa-define(--Arial12px);
-	color : #555555;
+	font: 16px/normal 'Noto Sans';
+	 color: #1A1A1A;
 	background : #ffffff;
 	-nexa-border : 0px none;
 }
@@ -2829,6 +2829,125 @@
 	background : linear-gradient(to bottom,rgba(255,255,255, 0) 0%,#ffffff);
 	-nexa-border : 1px solid #cccccc, 0px none, 0px none;
         
+}
+
+
+/* Khối Card màu trắng chứa toàn bộ nội dung */
+.Div.div_WF_MainCard {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #D3D3D3;
+    border-radius: 6px;
+}
+
+/* ====================================================================
+   TABLE STRUCTURE (BACKGROUNDS & BORDERS CHO SCREEN 2)
+==================================================================== */
+/* Ô nền xám cho các Label (Contract Number, Currency...) */
+.Static.stc_WF_LabelBg {
+    background: #F2F4F7; 
+    -nexa-border: 1px solid #D3D3D3;
+    font: 14px/normal 'Noto Sans';
+    color: #1A1A1A;
+    -nexa-padding: 0px 0px 0px 12px;
+}
+
+/* Ô nền trắng để bọc các Edit/Combo (Tạo viền bao quanh Input) */
+.Static.stc_WF_DataBg {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #D3D3D3;
+}
+
+/* Đường kẻ ngang chia block */
+.Static.stc_WF_Line {
+    background: #E0E0E0;
+}
+
+/* ====================================================================
+   BUTTONS
+==================================================================== */
+.Button.btn_WF_HighImportance {
+    background: #0D5FC0;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font: bold 15px 'Noto Sans';
+    -nexa-border: 0px none;
+}
+
+.Button.btn_WF_HighImportance[status=mouseover],
+.Button.btn_WF_HighImportance[status=focused] {
+    background: #0B4A96;
+}
+
+/* ====================================================================
+   STATICS (TITLES & ICONS)
+==================================================================== */
+.Static.stc_WF_TitleMain {
+    font: bold 22px/normal 'Noto Sans';
+    color: #1A1A1A;
+}
+
+.Static.stc_WF_TitleSub {
+    font: bold 16px/normal 'Noto Sans';
+    color: #0D5FC0;
+}
+
+.Static.stc_WF_BackIcon {
+    color: #0D5FC0;
+    font: bold 24px/normal 'Noto Sans';
+}
+
+/* ====================================================================
+   INPUTS (EDIT & COMBOBOX & CHECKBOX)
+==================================================================== */
+.Edit.edt_WF_Normal,
+.Combo.cmb_WF_Normal {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #C4C4C4;
+    color: #1A1A1A;
+    font: 14px/normal 'Noto Sans';
+}
+
+.Edit.edt_WF_Normal[status=mouseover],
+.Edit.edt_WF_Normal[status=focused],
+.Combo.cmb_WF_Normal[status=mouseover],
+.Combo.cmb_WF_Normal[status=focused] {
+    -nexa-border: 1px solid #0D5FC0;
+}
+
+/* Input ở trạng thái Readonly hoặc text hiển thị thường -> Bỏ viền */
+.Edit.edt_WF_Transparent,
+.Edit.edt_WF_Transparent[status=readonly] {
+    background: transparent;
+    -nexa-border: 0px none;
+    color: #1A1A1A;
+    font: 14px/normal 'Noto Sans';
+}
+
+/* ====================================================================
+   GRID SYSTEM (Dùng cho Screen 1)
+==================================================================== */
+.Grid.grd_WF_Standard {
+    -nexa-border: 1px solid #D3D3D3;
+}
+
+.Grid.grd_WF_Standard .head .row .cell {
+    background: #ACACAC;
+    -nexa-border: 1px solid #D3D3D3;
+    font: bold 15px/normal 'Noto Sans';
+    color: #1A1A1A;
+}
+
+.Grid.grd_WF_Standard .body .row .cell {
+    background: #FFFFFF;
+    font: 15px/normal 'Noto Sans';
+    color: #1A1A1A;
+    -nexa-border: 1px solid #DFDFDF;
+}
+
+.Edit.cell_WF_InnerEdit {
+    background: transparent;
+    font: 15px/normal 'Noto Sans';
+    -nexa-border: 0px none;
 }
 ]]></CSSData>
   <CSSData type="desktop"><![CDATA[]]></CSSData>

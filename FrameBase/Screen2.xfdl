@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CreditLimitAdjustment" width="1670" height="1016" titletext="Credit Limit Adjustment" onload="CreditLimitAdjustment_onload">
+    <Layouts>
+      <Layout height="1016" width="1670">
+        <Div id="div_MainCard" taborder="0" left="24" top="24" right="24" bottom="24" cssclass="div_WF_MainCard">
+          <Layouts>
+            <Layout>
+              <Static id="stc_BackIcon" top="20" left="20" width="32" height="32" text="←" cssclass="stc_WF_BackIcon"/>
+              <Static id="stc_ScreenTitle" text="Credit Limit Adjustment" left="60" top="20" width="400" height="32" cssclass="stc_WF_TitleMain"/>
+              <Static id="stc_ScreenId" text="ABCD123" right="160" top="20" width="80" height="32" textAlign="right"/>
+              <Button id="btn_Execute" text="Execute" right="20" top="20" width="120" height="36" cssclass="btn_WF_HighImportance" onclick="btn_Execute_onclick"/>
+              <Static id="stc_Line" left="20" top="76" right="20" height="1" cssclass="stc_WF_Line"/>
+              <Static id="stc_BasicInfoTitle" text="■ Basic Information" left="20" top="100" width="200" height="32" cssclass="stc_WF_TitleSub"/>
+              <Div id="div_BasicInfo" left="20" top="140" right="20" height="79">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_R1_Label" text="Contract Number" left="0" top="0" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R1_Data" left="239" top="0" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_Contract" left="252" top="4" width="150" height="32" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_ContractDesc" left="410" top="4" width="400" height="32" cssclass="edt_WF_Transparent" readonly="true"/>
+                    <Static id="stc_R2_Label" text="Effective Date" left="0" top="39" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R2_Data" left="239" top="39" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Combo id="cmb_Date" left="252" top="43" width="100" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_CmbSelect" codecolumn="code" datacolumn="value"/>
+                    <Edit id="edt_Year" left="360" top="43" width="50" height="32" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Static id="stc_Year" text="Year" left="418" top="43" width="40" height="32"/>
+                    <Edit id="edt_Month" left="462" top="43" width="50" height="32" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Static id="stc_Month" text="Month" left="520" top="43" width="50" height="32"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="stc_CurrentLimitTitle" text="■ Current Credit Limit" left="20" top="244" width="200" height="32" cssclass="stc_WF_TitleSub"/>
+              <Div id="div_CurrentLimit" left="20" top="284" right="20" height="118">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_R3_L1" text="Currency" left="0" top="0" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R3_D1" left="239" top="0" width="160" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_CurrencyVal" left="252" top="4" width="100" height="32" cssclass="edt_WF_Transparent" readonly="true"/>
+                    <Static id="stc_R3_L2" text="Exchange Rate Date" left="398" top="0" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R3_D2" left="637" top="0" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_ExDateVal" left="650" top="4" width="100" height="32" cssclass="edt_WF_Transparent" readonly="true"/>
+                    <Static id="stc_R4_Label" text="Credit Limit" left="0" top="39" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R4_Data" left="239" top="39" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_LimitVal" left="252" top="43" width="300" height="32" cssclass="edt_WF_Transparent" readonly="true"/>
+                    <Static id="stc_R5_Label" text="Credit Limit Classification" left="0" top="78" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R5_Data" left="239" top="78" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_ClassVal" left="252" top="82" width="300" height="32" cssclass="edt_WF_Transparent" readonly="true"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="stc_AdjTitle" text="■ Credit Limit Adjustment" left="20" top="426" width="250" height="32" cssclass="stc_WF_TitleSub"/>
+              <Div id="div_Adj" left="20" top="466" right="20" height="118">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_R6_L1" text="Adjustment Flag" left="0" top="0" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R6_D1" left="239" top="0" width="160" height="40" cssclass="stc_WF_DataBg"/>
+                    <CheckBox id="chk_AdjFlag" left="252" top="4" width="40" height="32" truevalue="1" falsevalue="0"/>
+                    <Static id="stc_R6_L2" text="Exchange Rate Date" left="398" top="0" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R6_D2" left="637" top="0" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Combo id="cmb_Era" left="650" top="4" width="80" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_CmbEra" codecolumn="code" datacolumn="value"/>
+                    <Edit id="edt_AYear" left="738" top="4" width="40" height="32" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Static id="stc_AYear" text="Year" left="782" top="4" width="30" height="32"/>
+                    <Edit id="edt_AMonth" left="816" top="4" width="40" height="32" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Static id="stc_AMonth" text="Month" left="860" top="4" width="45" height="32"/>
+                    <Edit id="edt_ADay" left="910" top="4" width="40" height="32" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Static id="stc_ADay" text="Day" left="954" top="4" width="30" height="32"/>
+                    <Static id="stc_R7_Label" text="Credit Limit" left="0" top="39" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R7_Data" left="239" top="39" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Combo id="cmb_AdjLimit" left="252" top="43" width="200" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_CmbLimit" codecolumn="code" datacolumn="value"/>
+                    <Static id="stc_R8_Label" text="Credit Limit Classification" left="0" top="78" width="240" height="40" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R8_Data" left="239" top="78" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_AdjClass" left="252" top="82" width="150" height="32" cssclass="edt_WF_Transparent" readonly="true"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_FormData">
+        <ColumnInfo>
+          <Column id="contractNo" type="STRING" size="256"/>
+          <Column id="contractDesc" type="STRING" size="256"/>
+          <Column id="effDateSel" type="STRING" size="256"/>
+          <Column id="effYear" type="STRING" size="256"/>
+          <Column id="effMonth" type="STRING" size="256"/>
+          <Column id="currency" type="STRING" size="256"/>
+          <Column id="exRateDate" type="STRING" size="256"/>
+          <Column id="currCreditLimit" type="STRING" size="256"/>
+          <Column id="currLimitClass" type="STRING" size="256"/>
+          <Column id="adjFlag" type="STRING" size="256"/>
+          <Column id="adjDateSel" type="STRING" size="256"/>
+          <Column id="adjYear" type="STRING" size="256"/>
+          <Column id="adjMonth" type="STRING" size="256"/>
+          <Column id="adjDay" type="STRING" size="256"/>
+          <Column id="adjCreditLimit" type="STRING" size="256"/>
+          <Column id="adjLimitClass" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_CmbSelect">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">Select</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="value">Option A</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_CmbEra">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">Reiwa</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="value">Heisei</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_CmbLimit">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">NNNNNNNNNNN</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="value">999,999,999</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.CreditLimitAdjustment_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+    this.fn_initMockData();
+};
+
+this.fn_initMockData = function()
+{
+    this.ds_FormData.clearData();
+    var nRow = this.ds_FormData.addRow(); 
+    
+    this.ds_FormData.setColumn(nRow, "contractNo", "XXXXXXXXXXX");
+    this.ds_FormData.setColumn(nRow, "contractDesc", "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+    this.ds_FormData.setColumn(nRow, "effDateSel", "01");
+    this.ds_FormData.setColumn(nRow, "effYear", "99");
+    this.ds_FormData.setColumn(nRow, "effMonth", "99");
+    this.ds_FormData.setColumn(nRow, "currency", "XX");
+    this.ds_FormData.setColumn(nRow, "exRateDate", "(99:99:99)");
+    this.ds_FormData.setColumn(nRow, "currCreditLimit", "NNNNNNNNNNN");
+    this.ds_FormData.setColumn(nRow, "currLimitClass", "X");
+    this.ds_FormData.setColumn(nRow, "adjFlag", "0"); 
+    this.ds_FormData.setColumn(nRow, "adjDateSel", "01");
+    this.ds_FormData.setColumn(nRow, "adjYear", "99");
+    this.ds_FormData.setColumn(nRow, "adjMonth", "99");
+    this.ds_FormData.setColumn(nRow, "adjDay", "99");
+    this.ds_FormData.setColumn(nRow, "adjCreditLimit", "01");
+    this.ds_FormData.setColumn(nRow, "adjLimitClass", "");
+};
+
+this.btn_Execute_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    var contract = this.ds_FormData.getColumn(0, "contractNo");
+    var isAdjusted = this.ds_FormData.getColumn(0, "adjFlag");
+    
+    if(isAdjusted == "1") {
+        this.alert("Executing Adjustment Action for Contract: " + contract);
+    } else {
+        this.alert("Please check Adjustment Flag before executing.");
+    }
+};]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="div_MainCard.form.div_BasicInfo.form.edt_Contract" propid="value" datasetid="ds_FormData" columnid="contractNo"/>
+      <BindItem id="item1" compid="div_MainCard.form.div_BasicInfo.form.edt_ContractDesc" propid="value" datasetid="ds_FormData" columnid="contractDesc"/>
+      <BindItem id="item2" compid="div_MainCard.form.div_BasicInfo.form.cmb_Date" propid="value" datasetid="ds_FormData" columnid="effDateSel"/>
+      <BindItem id="item3" compid="div_MainCard.form.div_BasicInfo.form.edt_Year" propid="value" datasetid="ds_FormData" columnid="effYear"/>
+      <BindItem id="item4" compid="div_MainCard.form.div_BasicInfo.form.edt_Month" propid="value" datasetid="ds_FormData" columnid="effMonth"/>
+      <BindItem id="item5" compid="div_MainCard.form.div_CurrentLimit.form.edt_CurrencyVal" propid="value" datasetid="ds_FormData" columnid="currency"/>
+      <BindItem id="item6" compid="div_MainCard.form.div_CurrentLimit.form.edt_ExDateVal" propid="value" datasetid="ds_FormData" columnid="exRateDate"/>
+      <BindItem id="item7" compid="div_MainCard.form.div_CurrentLimit.form.edt_LimitVal" propid="value" datasetid="ds_FormData" columnid="currCreditLimit"/>
+      <BindItem id="item8" compid="div_MainCard.form.div_CurrentLimit.form.edt_ClassVal" propid="value" datasetid="ds_FormData" columnid="currLimitClass"/>
+      <BindItem id="item9" compid="div_MainCard.form.div_Adj.form.chk_AdjFlag" propid="value" datasetid="ds_FormData" columnid="adjFlag"/>
+      <BindItem id="item10" compid="div_MainCard.form.div_Adj.form.cmb_Era" propid="value" datasetid="ds_FormData" columnid="adjDateSel"/>
+      <BindItem id="item11" compid="div_MainCard.form.div_Adj.form.edt_AYear" propid="value" datasetid="ds_FormData" columnid="adjYear"/>
+      <BindItem id="item12" compid="div_MainCard.form.div_Adj.form.edt_AMonth" propid="value" datasetid="ds_FormData" columnid="adjMonth"/>
+      <BindItem id="item13" compid="div_MainCard.form.div_Adj.form.edt_ADay" propid="value" datasetid="ds_FormData" columnid="adjDay"/>
+      <BindItem id="item14" compid="div_MainCard.form.div_Adj.form.cmb_AdjLimit" propid="value" datasetid="ds_FormData" columnid="adjCreditLimit"/>
+      <BindItem id="item15" compid="div_MainCard.form.div_Adj.form.edt_AdjClass" propid="value" datasetid="ds_FormData" columnid="adjLimitClass"/>
+    </Bind>
+  </Form>
+</FDL>
