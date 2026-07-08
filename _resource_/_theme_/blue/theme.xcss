@@ -19,7 +19,7 @@
 /* Frame/Form */
 .Form
 {
-	font: 16px/normal 'Noto Sans';
+	font: bold 16px/normal 'Noto Sans';
 	 color: #1A1A1A;
 	background : #ffffff;
 	-nexa-border : 0px none;
@@ -2838,15 +2838,33 @@
     -nexa-border: 1px solid #D3D3D3;
     border-radius: 6px;
 }
+.Button.btnBackicon
+{
+	background : transparent;
+	-nexa-border : 0px none;
+}
+.CheckBox.bigcheck,
+.CheckBox.bigcheck[status=mouseover]
+{
+	-nexa-icon : url('imagerc::chk_WF_Box_24.png');
+	-nexa-text-align: left;
+	-nexa-padding: 6px;
+}
 
+.CheckBox.bigcheck[userstatus=selected]
+{
+	-nexa-icon : url('imagerc::chk_WF_Box_24_S.png');
+	-nexa-text-align: left;
+	-nexa-padding: 6px;
+}
 /* ====================================================================
    TABLE STRUCTURE (BACKGROUNDS & BORDERS CHO SCREEN 2)
 ==================================================================== */
 /* Ô nền xám cho các Label (Contract Number, Currency...) */
 .Static.stc_WF_LabelBg {
-    background: #F2F4F7; 
+    background: #ECECEC; 
     -nexa-border: 1px solid #D3D3D3;
-    font: 14px/normal 'Noto Sans';
+    font: bold 14px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-padding: 0px 0px 0px 12px;
 }
@@ -2868,9 +2886,8 @@
 .Button.btn_WF_HighImportance {
     background: #0D5FC0;
     color: #FFFFFF;
-    border-radius: 4px;
-    font: bold 15px 'Noto Sans';
-    -nexa-border: 0px none;
+    border-radius: 10px;
+    font: bold 16px 'Noto Sans';
 }
 
 .Button.btn_WF_HighImportance[status=mouseover],
@@ -2881,6 +2898,7 @@
 /* ====================================================================
    STATICS (TITLES & ICONS)
 ==================================================================== */
+
 .Static.stc_WF_TitleMain {
     font: bold 22px/normal 'Noto Sans';
     color: #1A1A1A;
@@ -2904,7 +2922,7 @@
     background: #FFFFFF;
     -nexa-border: 1px solid #C4C4C4;
     color: #1A1A1A;
-    font: 14px/normal 'Noto Sans';
+    font: bold 14px/normal 'Noto Sans';
 }
 
 .Edit.edt_WF_Normal[status=mouseover],
@@ -2920,7 +2938,7 @@
     background: transparent;
     -nexa-border: 0px none;
     color: #1A1A1A;
-    font: 14px/normal 'Noto Sans';
+    font: bold 14px/normal 'Noto Sans';
 }
 
 /* ====================================================================
@@ -2939,7 +2957,7 @@
 
 .Grid.grd_WF_Standard .body .row .cell {
     background: #FFFFFF;
-    font: 15px/normal 'Noto Sans';
+    font: bold 15px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-border: 1px solid #DFDFDF;
 }
