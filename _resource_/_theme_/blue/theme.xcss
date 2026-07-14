@@ -2832,50 +2832,48 @@
 }
 
 
-/* Khối Card màu trắng chứa toàn bộ nội dung */
+/* Khối Card màu trắng */
 .Div.div_WF_MainCard {
     background: #FFFFFF;
     -nexa-border: 1px solid #D3D3D3;
     border-radius: 6px;
 }
-.Button.btnBackicon
-{
-	background : transparent;
-	-nexa-border : 0px none;
-}
-.CheckBox.bigcheck,
-.CheckBox.bigcheck[status=mouseover]
-{
-	-nexa-icon : url('imagerc::chk_WF_Box_24.png');
-	-nexa-text-align: left;
-	-nexa-padding: 6px;
+
+.Button.btnBackicon {
+    background : transparent;
+    -nexa-border : 0px none;
 }
 
-.CheckBox.bigcheck[userstatus=selected]
-{
-	-nexa-icon : url('imagerc::chk_WF_Box_24_S.png');
-	-nexa-text-align: left;
-	-nexa-padding: 6px;
+.CheckBox.bigcheck,
+.CheckBox.bigcheck[status=mouseover] {
+    -nexa-icon : url('imagerc::chk_WF_Box_24.png');
+    -nexa-text-align: left;
+    -nexa-padding: 6px;
 }
+
+.CheckBox.bigcheck[userstatus=selected] {
+    -nexa-icon : url('imagerc::chk_WF_Box_24_S.png');
+    -nexa-text-align: left;
+    -nexa-padding: 6px;
+}
+
 /* ====================================================================
-   TABLE STRUCTURE (BACKGROUNDS & BORDERS CHO SCREEN 2)
+   TABLE STRUCTURE
 ==================================================================== */
-/* Ô nền xám cho các Label (Contract Number, Currency...) */
 .Static.stc_WF_LabelBg {
     background: #ECECEC; 
     -nexa-border: 1px solid #D3D3D3;
-    font: bold 14px/normal 'Noto Sans';
+    /* Base bold 16px theo chuẩn base text */
+    font: bold 16px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-padding: 0px 0px 0px 12px;
 }
 
-/* Ô nền trắng để bọc các Edit/Combo (Tạo viền bao quanh Input) */
 .Static.stc_WF_DataBg {
     background: #FFFFFF;
     -nexa-border: 1px solid #D3D3D3;
 }
 
-/* Đường kẻ ngang chia block */
 .Static.stc_WF_Line {
     background: #E0E0E0;
 }
@@ -2898,20 +2896,27 @@
 /* ====================================================================
    STATICS (TITLES & ICONS)
 ==================================================================== */
-
+/* FIX Item 21: Main heading 24px */
 .Static.stc_WF_TitleMain {
-    font: bold 22px/normal 'Noto Sans';
+    font: bold 24px/normal 'Noto Sans';
     color: #1A1A1A;
 }
 
+/* FIX Item 21: Heading 18px */
 .Static.stc_WF_TitleSub {
-    font: bold 16px/normal 'Noto Sans';
+    font: bold 18px/normal 'Noto Sans';
     color: #0D5FC0;
 }
 
 .Static.stc_WF_BackIcon {
     color: #0D5FC0;
     font: bold 24px/normal 'Noto Sans';
+}
+
+/* FIX Item 21: Screen ID 12px */
+.Static.stcScreenID {
+    font: 12px/normal 'Noto Sans';
+    color: #1A1A1A;
 }
 
 /* ====================================================================
@@ -2922,7 +2927,8 @@
     background: #FFFFFF;
     -nexa-border: 1px solid #C4C4C4;
     color: #1A1A1A;
-    font: bold 14px/normal 'Noto Sans';
+    /* FIX Item 21: Base Input Text 16px */
+    font: normal 16px/normal 'Noto Sans';
 }
 
 .Edit.edt_WF_Normal[status=mouseover],
@@ -2932,17 +2938,16 @@
     -nexa-border: 1px solid #0D5FC0;
 }
 
-/* Input ở trạng thái Readonly hoặc text hiển thị thường -> Bỏ viền */
 .Edit.edt_WF_Transparent,
 .Edit.edt_WF_Transparent[status=readonly] {
     background: transparent;
     -nexa-border: 0px none;
     color: #1A1A1A;
-    font: bold 14px/normal 'Noto Sans';
+    font: normal 16px/normal 'Noto Sans';
 }
 
 /* ====================================================================
-   GRID SYSTEM (Dùng cho Screen 1)
+   GRID SYSTEM (Sẵn sàng cho Screen 3)
 ==================================================================== */
 .Grid.grd_WF_Standard {
     -nexa-border: 1px solid #D3D3D3;
@@ -2957,7 +2962,7 @@
 
 .Grid.grd_WF_Standard .body .row .cell {
     background: #FFFFFF;
-    font: bold 15px/normal 'Noto Sans';
+    font: normal 15px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-border: 1px solid #DFDFDF;
 }
@@ -2967,7 +2972,23 @@
     font: 15px/normal 'Noto Sans';
     -nexa-border: 0px none;
 }
-]]></CSSData>
+.TextArea.txta_WF_Normal {
+    background: #FFFFFF none;
+    -nexa-border: 1px solid #B1B1B1;
+    color: #1A1A1A;
+    font: 16px/normal 'Noto Sans';
+    -nexa-padding: 8px;
+}
+
+.TextArea.txta_WF_Normal[status=mouseover],
+.TextArea.txta_WF_Normal[status=focused] {
+    -nexa-border: 1px solid #0D5FC0;
+}
+
+.Radio.rdo_WF_Normal .radioitem {
+    font: 16px/normal 'Noto Sans';
+    color: #1A1A1A;
+}]]></CSSData>
   <CSSData type="desktop"><![CDATA[]]></CSSData>
   <CSSData type="mobile_large"><![CDATA[]]></CSSData>
   <CSSData type="mobile_small"><![CDATA[]]></CSSData>

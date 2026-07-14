@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="AmortizationRecordRegistration" width="1670" height="1016" titletext="Amortization Record Registration" onload="AmortizationRecordRegistration_onload">
+    <Layouts>
+      <Layout height="1016" width="1670">
+        <Static id="stc_ScreenId" text="MCAR10" right="32" top="0" width="120" height="36" cssclass="stcScreenID" textAlign="right"/>
+        <Div id="div_MainCard" taborder="0" left="32" top="24" right="32" bottom="24" cssclass="div_WF_MainCard">
+          <Layouts>
+            <Layout>
+              <Button id="btn_Back" top="16" left="24" width="40" height="40" icon="url('imagerc::arrow_circle_left_40dp_558ED1_FILL0_wght400_GRAD0_opsz40.png')" cssclass="btnBackicon" taborder="0"/>
+              <Static id="stc_ScreenTitleMain" text="Amortization Record Registration" left="btn_Back:8" top="16" width="500" height="36" cssclass="stc_WF_TitleMain" taborder="1"/>
+              <Button id="btn_Execute" text="Execute" right="24" top="16" width="120" height="40" cssclass="btn_WF_HighImportance" onclick="btn_Execute_onclick" taborder="2"/>
+              <Static id="stc_Line" left="24" top="stc_ScreenTitleMain:16" right="24" height="1" cssclass="stc_WF_Line" taborder="3"/>
+              <Static id="stc_BasicInfoTitle" text="■ Basic Information" left="24" top="stc_Line:12" width="200" height="36" cssclass="stc_WF_TitleSub" taborder="4"/>
+              <!-- >>> UPDATE: chuyển sang anchor tương đối + tăng height 2 row cuối để wrap chữ -->
+              <Div id="div_BasicInfo" left="24" top="stc_BasicInfoTitle:8" right="24" height="223" taborder="5">
+                <Layouts>
+                  <Layout>
+                    <!-- Row 1: Amortization Type -->
+                    <Static id="stc_R1_Label" text="Amortization Type" left="0" top="0" width="240" height="71" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R1_Data" left="stc_R1_Label:-1" top="0" right="0" height="71" cssclass="stc_WF_DataBg"/>
+                    <Radio id="rdo_AmortType" left="stc_R1_Label:16" top="8" width="800" height="32" innerdataset="ds_AmortType" codecolumn="code" datacolumn="value" direction="horizontal" columncount="-1" rowcount="1" cssclass="rdo_WF_Normal" taborder="0"/>
+                    <CheckBox id="chk_Digest" text="Digest Amortization Processing" left="stc_R1_Label:16" top="rdo_AmortType:0" width="300" height="32" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="1"/>
+                    <CheckBox id="chk_Manual" text="Manual" left="chk_Digest:16" top="rdo_AmortType:0" width="120" height="32" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="2"/>
+                    <!-- Row 2: Reference Number -->
+                    <Static id="stc_R2_Label" text="Reference Number" left="0" top="stc_R1_Label:0" width="240" height="36" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R2_Data" left="stc_R2_Label:-1" top="stc_R1_Label:0" right="0" height="36" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_Ref1" left="stc_R2_Label:8" top="stc_R2_Label:2" width="120" height="32" cssclass="edt_WF_Normal" maxlength="8" taborder="3"/>
+                    <Edit id="edt_Ref2" left="edt_Ref1:8" top="stc_R2_Label:2" width="500" height="32" cssclass="edt_WF_Transparent" readonly="true" taborder="4"/>
+                    <!-- Row 3: Document Number -->
+                    <Static id="stc_R3_Label" text="Document Number" left="0" top="stc_R2_Label:0" width="240" height="36" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_R3_Data" left="stc_R3_Label:-1" top="stc_R2_Label:0" right="0" height="36" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_DocNo" left="stc_R3_Label:8" top="stc_R3_Label:2" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20" taborder="5"/>
+                    <!-- Row 4: Counterparty Reference Number — >>> UPDATE: wordwrap 2 dòng, height 40 -->
+                    <Static id="stc_R4_Label" text="Counterparty Reference Number" left="0" top="stc_R3_Label:0" width="240" height="40" cssclass="stc_WF_LabelBg" wordwrap="word" vAlign="middle"/>
+                    <Static id="stc_R4_Data" left="stc_R4_Label:-1" top="stc_R3_Label:0" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_CpRefNo" left="stc_R4_Label:8" top="stc_R4_Label:4" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20" taborder="6"/>
+                    <!-- Row 5: Counterparty Custom Reference Number — >>> UPDATE: wordwrap 2 dòng, height 40 -->
+                    <Static id="stc_R5_Label" text="Counterparty Custom Reference Number" left="0" top="stc_R4_Label:0" width="240" height="40" cssclass="stc_WF_LabelBg" wordwrap="word" vAlign="middle"/>
+                    <Static id="stc_R5_Data" left="stc_R5_Label:-1" top="stc_R4_Label:0" right="0" height="40" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_CpCustRefNo" left="stc_R5_Label:8" top="stc_R5_Label:4" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20" taborder="7"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="stc_DetailsTitle" text="■ Amortization Details" left="24" top="div_BasicInfo:16" width="250" height="36" cssclass="stc_WF_TitleSub" taborder="6"/>
+              <!-- >>> UPDATE: height 150 -> 180 để hiện đủ 4 dòng + scrollbar giống design -->
+              <Grid id="grd_AmortDetails" left="24" top="stc_DetailsTitle:8" right="24" height="180" cssclass="grd_WF_Standard" binddataset="ds_GridData" autofittype="col" taborder="7">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="250"/>
+                      <Column size="1000"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="36"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="Select"/>
+                      <Cell col="1" text="Contract Number"/>
+                      <Cell col="2" text="Counterparty Number"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:chk"/>
+                      <Cell col="1" text="bind:contractNo" textAlign="center"/>
+                      <Cell col="2" text="bind:cpNo" textAlign="left"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="stc_InfoTitle" text="■ Amortization Information" left="24" top="grd_AmortDetails:16" width="250" height="36" cssclass="stc_WF_TitleSub" taborder="8"/>
+              <Div id="div_Info" left="24" top="stc_InfoTitle:8" right="24" height="71" taborder="9">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_H1" text="Amortization Date" left="0" top="0" width="380" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
+                    <Static id="stc_H2" text="Fiscal Year / Period" left="stc_H1:-1" top="0" width="220" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
+                    <Static id="stc_H3" text="Amortization Method" left="stc_H2:-1" top="0" width="260" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
+                    <Static id="stc_H4" text="Loss Classification" left="stc_H3:-1" top="0" width="200" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
+                    <Static id="stc_H5" text="Deferred" left="stc_H4:-1" top="0" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
+                    <Static id="stc_D1" left="0" top="35" width="380" height="36" cssclass="stc_WF_DataBg"/>
+                    <Combo id="cmb_Era" left="8" top="37" width="80" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_Era" codecolumn="code" datacolumn="value" taborder="0"/>
+                    <Edit id="edt_AYear" left="cmb_Era:8" top="37" width="40" height="32" cssclass="edt_WF_Normal" textAlign="center" maxlength="4" taborder="1"/>
+                    <Static id="stc_YLabel" text="Y" left="edt_AYear:4" top="37" width="20" height="32"/>
+                    <Edit id="edt_AMonth" left="stc_YLabel:4" top="37" width="40" height="32" cssclass="edt_WF_Normal" textAlign="center" maxlength="2" taborder="2"/>
+                    <Static id="stc_MLabel" text="M" left="edt_AMonth:4" top="37" width="24" height="32"/>
+                    <Edit id="edt_ADay" left="stc_MLabel:4" top="37" width="40" height="32" cssclass="edt_WF_Normal" textAlign="center" maxlength="2" taborder="3"/>
+                    <Static id="stc_DLabel" text="D" left="edt_ADay:4" top="37" width="24" height="32"/>
+                    <Static id="stc_D2" left="stc_D1:-1" top="35" width="220" height="36" cssclass="stc_WF_DataBg"/>
+                    <Combo id="cmb_Fiscal" left="stc_D1:8" top="37" width="150" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_Fiscal" codecolumn="code" datacolumn="value" taborder="4"/>
+                    <Static id="stc_D3" left="stc_D2:-1" top="35" width="260" height="36" cssclass="stc_WF_DataBg"/>
+                    <Combo id="cmb_Method" left="stc_D2:8" top="37" width="200" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_Method" codecolumn="code" datacolumn="value" taborder="5"/>
+                    <Static id="stc_D4" left="stc_D3:-1" top="35" width="200" height="36" cssclass="stc_WF_DataBg"/>
+                    <Edit id="edt_LossClass" left="stc_D3:8" top="37" width="160" height="32" cssclass="edt_WF_Normal" taborder="6"/>
+                    <Static id="stc_D5" left="stc_D4:-1" top="35" right="0" height="36" cssclass="stc_WF_DataBg"/>
+                    <CheckBox id="chk_Deferred" text="Yes" left="stc_D4:16" top="37" width="80" height="32" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="7"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Static id="stc_ReasonTitle" text="■ Amortization Reason" left="24" top="div_Info:16" width="250" height="36" cssclass="stc_WF_TitleSub" taborder="10"/>
+              <TextArea id="txta_Reason" left="24" top="stc_ReasonTitle:8" width="1120" height="80" cssclass="txta_WF_Normal" taborder="11"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_AmortType">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">Standard</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="value">Extraordinary Loss</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="value">Loan Loss Reserve</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="value">Impairment</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="value">Schedule Estimate</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Era">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">Reiwa</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Fiscal">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">NNN</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_Method">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="value">NNNNNN</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_FormData">
+        <ColumnInfo>
+          <Column id="amortType" type="STRING" size="256"/>
+          <Column id="digestProc" type="STRING" size="256"/>
+          <Column id="manualProc" type="STRING" size="256"/>
+          <Column id="refNo1" type="STRING" size="256"/>
+          <Column id="refNo2" type="STRING" size="256"/>
+          <Column id="docNo" type="STRING" size="256"/>
+          <Column id="cpRefNo" type="STRING" size="256"/>
+          <Column id="cpCustRefNo" type="STRING" size="256"/>
+          <Column id="amortEra" type="STRING" size="256"/>
+          <Column id="amortY" type="STRING" size="256"/>
+          <Column id="amortM" type="STRING" size="256"/>
+          <Column id="amortD" type="STRING" size="256"/>
+          <Column id="fiscalPeriod" type="STRING" size="256"/>
+          <Column id="amortMethod" type="STRING" size="256"/>
+          <Column id="lossClass" type="STRING" size="256"/>
+          <Column id="deferred" type="STRING" size="256"/>
+          <Column id="reason" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_GridData">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="contractNo" type="STRING" size="256"/>
+          <Column id="cpNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.AmortizationRecordRegistration_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+    this.fn_initMockData();
+};
+
+this.fn_initMockData = function()
+{
+    // 1. Initialize Single-Row Form Data
+    this.ds_FormData.clearData();
+    var nRow = this.ds_FormData.addRow(); 
+    
+    this.ds_FormData.setColumn(nRow, "amortType", "01"); // Selects "Standard"
+    this.ds_FormData.setColumn(nRow, "digestProc", "0");
+    this.ds_FormData.setColumn(nRow, "manualProc", "0");
+    this.ds_FormData.setColumn(nRow, "refNo1", "XXXXXXXX");
+    this.ds_FormData.setColumn(nRow, "refNo2", "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+    this.ds_FormData.setColumn(nRow, "amortEra", "01"); // Reiwa
+    this.ds_FormData.setColumn(nRow, "amortY", "99");
+    this.ds_FormData.setColumn(nRow, "amortM", "99");
+    this.ds_FormData.setColumn(nRow, "amortD", "99");
+    this.ds_FormData.setColumn(nRow, "fiscalPeriod", "01"); // NNN
+    this.ds_FormData.setColumn(nRow, "amortMethod", "01"); // NNNNNN
+    this.ds_FormData.setColumn(nRow, "deferred", "1"); // Check "Yes"
+    
+    // 2. Initialize Grid Mock Data
+    this.ds_GridData.clearData();
+    for(var i = 0; i < 4; i++) {
+        var gRow = this.ds_GridData.addRow();
+        this.ds_GridData.setColumn(gRow, "chk", (i == 0) ? "1" : "0");
+        this.ds_GridData.setColumn(gRow, "contractNo", "XXXXXXXX");
+        this.ds_GridData.setColumn(gRow, "cpNo", "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+    }
+};
+
+this.btn_Execute_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    this.alert("Execute Action Triggered for Amortization Registration.");
+};]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="div_MainCard.form.div_BasicInfo.form.rdo_AmortType" propid="value" datasetid="ds_FormData" columnid="amortType"/>
+      <BindItem id="item1" compid="div_MainCard.form.div_BasicInfo.form.chk_Digest" propid="value" datasetid="ds_FormData" columnid="digestProc"/>
+      <BindItem id="item2" compid="div_MainCard.form.div_BasicInfo.form.chk_Manual" propid="value" datasetid="ds_FormData" columnid="manualProc"/>
+      <BindItem id="item3" compid="div_MainCard.form.div_BasicInfo.form.edt_Ref1" propid="value" datasetid="ds_FormData" columnid="refNo1"/>
+      <BindItem id="item4" compid="div_MainCard.form.div_BasicInfo.form.edt_Ref2" propid="value" datasetid="ds_FormData" columnid="refNo2"/>
+      <BindItem id="item5" compid="div_MainCard.form.div_BasicInfo.form.edt_DocNo" propid="value" datasetid="ds_FormData" columnid="docNo"/>
+      <BindItem id="item6" compid="div_MainCard.form.div_BasicInfo.form.edt_CpRefNo" propid="value" datasetid="ds_FormData" columnid="cpRefNo"/>
+      <BindItem id="item7" compid="div_MainCard.form.div_BasicInfo.form.edt_CpCustRefNo" propid="value" datasetid="ds_FormData" columnid="cpCustRefNo"/>
+      <BindItem id="item8" compid="div_MainCard.form.div_Info.form.cmb_Era" propid="value" datasetid="ds_FormData" columnid="amortEra"/>
+      <BindItem id="item9" compid="div_MainCard.form.div_Info.form.edt_AYear" propid="value" datasetid="ds_FormData" columnid="amortY"/>
+      <BindItem id="item10" compid="div_MainCard.form.div_Info.form.edt_AMonth" propid="value" datasetid="ds_FormData" columnid="amortM"/>
+      <BindItem id="item11" compid="div_MainCard.form.div_Info.form.edt_ADay" propid="value" datasetid="ds_FormData" columnid="amortD"/>
+      <BindItem id="item12" compid="div_MainCard.form.div_Info.form.cmb_Fiscal" propid="value" datasetid="ds_FormData" columnid="fiscalPeriod"/>
+      <BindItem id="item13" compid="div_MainCard.form.div_Info.form.cmb_Method" propid="value" datasetid="ds_FormData" columnid="amortMethod"/>
+      <BindItem id="item14" compid="div_MainCard.form.div_Info.form.edt_LossClass" propid="value" datasetid="ds_FormData" columnid="lossClass"/>
+      <BindItem id="item15" compid="div_MainCard.form.div_Info.form.chk_Deferred" propid="value" datasetid="ds_FormData" columnid="deferred"/>
+      <BindItem id="item16" compid="div_MainCard.form.txta_Reason" propid="value" datasetid="ds_FormData" columnid="reason"/>
+    </Bind>
+  </Form>
+</FDL>

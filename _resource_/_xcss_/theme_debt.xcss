@@ -1,38 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XCSS version="1.1">
   <CSSData><![CDATA[]]></CSSData>
-  <CSSData type="desktop"><![CDATA[.Form {
-    background: #F3F5F7; 
-    font: 15px/normal 'Noto Sans';
+  <CSSData type="desktop"><![CDATA[.Form
+{
+    /* FIX Item 21: Base text 16px */
+    font: normal 16px/normal 'Noto Sans';
     color: #1A1A1A;
+    background : #ffffff;
+    -nexa-border : 0px none;
 }
 
-/* Khối Card màu trắng chứa toàn bộ nội dung */
+/* Khối Card màu trắng */
 .Div.div_WF_MainCard {
     background: #FFFFFF;
     -nexa-border: 1px solid #D3D3D3;
     border-radius: 6px;
 }
 
-/* ====================================================================
-   TABLE STRUCTURE (BACKGROUNDS & BORDERS CHO SCREEN 2)
-==================================================================== */
-/* Ô nền xám cho các Label (Contract Number, Currency...) */
-.Static.stc_WF_LabelBg {
-    background: #F2F4F7; 
-    -nexa-border: 1px solid #D3D3D3;
-    font: 14px/normal 'Noto Sans';
-    color: #1A1A1A;
-    padding: 0 0 0 12px;
+.Button.btnBackicon {
+    background : transparent;
+    -nexa-border : 0px none;
 }
 
-/* Ô nền trắng để bọc các Edit/Combo (Tạo viền bao quanh Input) */
+.CheckBox.bigcheck,
+.CheckBox.bigcheck[status=mouseover] {
+    -nexa-icon : url('imagerc::chk_WF_Box_24.png');
+    -nexa-text-align: left;
+    -nexa-padding: 6px;
+}
+
+.CheckBox.bigcheck[userstatus=selected] {
+    -nexa-icon : url('imagerc::chk_WF_Box_24_S.png');
+    -nexa-text-align: left;
+    -nexa-padding: 6px;
+}
+
+/* ====================================================================
+   TABLE STRUCTURE
+==================================================================== */
+.Static.stc_WF_LabelBg {
+    background: #ECECEC; 
+    -nexa-border: 1px solid #D3D3D3;
+    /* Base bold 16px theo chuẩn base text */
+    font: bold 16px/normal 'Noto Sans';
+    color: #1A1A1A;
+    -nexa-padding: 0px 0px 0px 12px;
+}
+
 .Static.stc_WF_DataBg {
     background: #FFFFFF;
     -nexa-border: 1px solid #D3D3D3;
 }
 
-/* Đường kẻ ngang chia block */
 .Static.stc_WF_Line {
     background: #E0E0E0;
 }
@@ -43,9 +62,8 @@
 .Button.btn_WF_HighImportance {
     background: #0D5FC0;
     color: #FFFFFF;
-    border-radius: 4px;
-    font: bold 15px 'Noto Sans';
-    -nexa-border: 0px none;
+    border-radius: 10px;
+    font: bold 16px 'Noto Sans';
 }
 
 .Button.btn_WF_HighImportance[status=mouseover],
@@ -56,19 +74,27 @@
 /* ====================================================================
    STATICS (TITLES & ICONS)
 ==================================================================== */
+/* FIX Item 21: Main heading 24px */
 .Static.stc_WF_TitleMain {
-    font: bold 22px/normal 'Noto Sans';
+    font: bold 24px/normal 'Noto Sans';
     color: #1A1A1A;
 }
 
+/* FIX Item 21: Heading 18px */
 .Static.stc_WF_TitleSub {
-    font: bold 16px/normal 'Noto Sans';
+    font: bold 18px/normal 'Noto Sans';
     color: #0D5FC0;
 }
 
 .Static.stc_WF_BackIcon {
     color: #0D5FC0;
     font: bold 24px/normal 'Noto Sans';
+}
+
+/* FIX Item 21: Screen ID 12px */
+.Static.stcScreenID {
+    font: 12px/normal 'Noto Sans';
+    color: #1A1A1A;
 }
 
 /* ====================================================================
@@ -79,7 +105,8 @@
     background: #FFFFFF;
     -nexa-border: 1px solid #C4C4C4;
     color: #1A1A1A;
-    font: 14px/normal 'Noto Sans';
+    /* FIX Item 21: Base Input Text 16px */
+    font: normal 16px/normal 'Noto Sans';
 }
 
 .Edit.edt_WF_Normal[status=mouseover],
@@ -89,17 +116,16 @@
     -nexa-border: 1px solid #0D5FC0;
 }
 
-/* Input ở trạng thái Readonly hoặc text hiển thị thường -> Bỏ viền */
 .Edit.edt_WF_Transparent,
 .Edit.edt_WF_Transparent[status=readonly] {
     background: transparent;
     -nexa-border: 0px none;
     color: #1A1A1A;
-    font: 14px/normal 'Noto Sans';
+    font: normal 16px/normal 'Noto Sans';
 }
 
 /* ====================================================================
-   GRID SYSTEM (Dùng cho Screen 1)
+   GRID SYSTEM (Sẵn sàng cho Screen 3)
 ==================================================================== */
 .Grid.grd_WF_Standard {
     -nexa-border: 1px solid #D3D3D3;
@@ -114,7 +140,7 @@
 
 .Grid.grd_WF_Standard .body .row .cell {
     background: #FFFFFF;
-    font: 15px/normal 'Noto Sans';
+    font: normal 15px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-border: 1px solid #DFDFDF;
 }
