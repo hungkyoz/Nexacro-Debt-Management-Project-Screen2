@@ -20,8 +20,8 @@
                     <Static id="stc_R1_Label" text="Amortization Type" left="0" top="0" width="240" height="71" cssclass="stc_WF_LabelBg"/>
                     <Static id="stc_R1_Data" left="stc_R1_Label:-1" top="0" right="0" height="71" cssclass="stc_WF_DataBg"/>
                     <Radio id="rdo_AmortType" left="stc_R1_Label:16" top="8" width="800" height="32" innerdataset="ds_AmortType" codecolumn="code" datacolumn="value" direction="horizontal" columncount="-1" rowcount="1" cssclass="rdo_WF_Normal" taborder="0"/>
-                    <CheckBox id="chk_Digest" text="Digest Amortization Processing" left="stc_R1_Label:16" top="rdo_AmortType:0" width="300" height="32" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="1"/>
-                    <CheckBox id="chk_Manual" text="Manual" left="chk_Digest:16" top="rdo_AmortType:0" width="120" height="32" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="2"/>
+                    <CheckBox id="chk_Digest" text="Digest Amortization Processing" left="stc_R1_Label:16" top="rdo_AmortType:0" width="300" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="1"/>
+                    <CheckBox id="chk_Manual" text="Manual" left="chk_Digest:16" top="rdo_AmortType:0" width="120" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="2"/>
                     <!-- Row 2: Reference Number -->
                     <Static id="stc_R2_Label" text="Reference Number" left="0" top="stc_R1_Label:0" width="240" height="36" cssclass="stc_WF_LabelBg"/>
                     <Static id="stc_R2_Data" left="stc_R2_Label:-1" top="stc_R1_Label:0" right="0" height="36" cssclass="stc_WF_DataBg"/>
@@ -49,8 +49,8 @@
                   <Format id="default">
                     <Columns>
                       <Column size="80"/>
-                      <Column size="250"/>
-                      <Column size="1000"/>
+                      <Column size="270"/>
+                      <Column size="977"/>
                     </Columns>
                     <Rows>
                       <Row size="36" band="head"/>

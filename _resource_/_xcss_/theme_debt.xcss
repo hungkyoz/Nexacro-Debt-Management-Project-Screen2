@@ -34,6 +34,19 @@
     -nexa-text-align: left;
     -nexa-padding: 6px;
 }
+.Radio.rdo_WF_Normal .radioitem 
+{
+    font: normal 16px/normal 'Noto Sans';
+    color: #1A1A1A;
+    -nexa-icon: url('imagerc::radio_unchecked_24.png');
+    -nexa-text-padding: 0px 0px 0px 8px; /* Khoảng cách từ icon tròn đến chữ */
+}
+
+.Radio.rdo_WF_Normal .radioitem[userstatus=selected] 
+{
+    -nexa-icon: url('imagerc::radio_checked_24.png');
+}
+/*
 
 /* ====================================================================
    TABLE STRUCTURE
@@ -143,6 +156,14 @@
     font: normal 15px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-border: 1px solid #DFDFDF;
+}
+.Grid.grd_WF_Standard .body .row .cell .cellcheckbox {
+    -nexa-icon: url('imagerc::chk_WF_Box_24.png');
+}
+
+/* Trạng thái đã chọn */
+.Grid.grd_WF_Standard .body .row .cell .cellcheckbox[userstatus=selected] {
+    -nexa-icon: url('imagerc::chk_WF_Box_24_S.png');
 }
 
 .Edit.cell_WF_InnerEdit {
