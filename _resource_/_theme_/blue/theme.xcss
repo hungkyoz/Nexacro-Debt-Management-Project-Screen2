@@ -2861,7 +2861,7 @@
     font: normal 16px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-icon: url('imagerc::radio_unchecked_24.png');
-    -nexa-text-padding: 0px 24px 0px 8px;
+    -nexa-text-padding: 0px 0px 0px 8px;
 }
 
 .Radio.rdo_WF_Normal .radioitem[userstatus=selected] 
@@ -2933,13 +2933,21 @@
 /* ====================================================================
    INPUTS (EDIT & COMBOBOX & CHECKBOX)
 ==================================================================== */
-.Edit.edt_WF_Normal,
+.Edit.edt_WF_Normal {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #C4C4C4;
+    color: #1A1A1A;
+    font: normal 16px/normal 'Noto Sans';
+    -nexa-padding: 0px 8px 0px 8px;
+}
+
+/* >>> UPDATE: chỉ Combo mới cần chừa chỗ cho mũi tên dropdown */
 .Combo.cmb_WF_Normal {
     background: #FFFFFF;
     -nexa-border: 1px solid #C4C4C4;
     color: #1A1A1A;
     font: normal 16px/normal 'Noto Sans';
-    -nexa-padding: 0px 20px 0px 8px;
+    -nexa-padding: 0px 24px 0px 8px;
 }
 
 .Edit.edt_WF_Normal[status=mouseover],
