@@ -19,7 +19,7 @@
 /* Frame/Form */
 .Form
 {
-	font: bold 16px/normal 'Noto Sans';
+	font:  16px/normal 'Noto Sans';
 	 color: #1A1A1A;
 	background : #ffffff;
 	-nexa-border : 0px none;
@@ -3012,7 +3012,18 @@
 .TextArea.txta_WF_Normal[status=focused] {
     -nexa-border: 1px solid #0D5FC0;
 }
-]]></CSSData>
+.Button.btn_WF_Secondary {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #0D5FC0;
+    color: #0D5FC0;
+    border-radius: 10px;
+    font: bold 16px 'Noto Sans';
+}
+
+.Button.btn_WF_Secondary[status=mouseover],
+.Button.btn_WF_Secondary[status=focused] {
+    background: #F0F4FA; /* Màu nền xanh nhạt khi hover */
+}]]></CSSData>
   <CSSData type="desktop"><![CDATA[]]></CSSData>
   <CSSData type="mobile_large"><![CDATA[]]></CSSData>
   <CSSData type="mobile_small"><![CDATA[]]></CSSData>

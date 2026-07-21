@@ -12,22 +12,28 @@
               <Button id="btn_Execute" text="Execute" right="24" top="16" width="120" height="40" cssclass="btn_WF_HighImportance" onclick="btn_Execute_onclick" taborder="2"/>
               <Static id="stc_Line" left="24" top="stc_ScreenTitleMain:16" right="24" height="1" cssclass="stc_WF_Line" taborder="3"/>
               <Static id="stc_BasicInfoTitle" text="■ Basic Information" left="24" top="stc_Line:12" width="200" height="36" cssclass="stc_WF_TitleSub" taborder="4"/>
-              <Div id="div_BasicInfo" left="24" top="stc_BasicInfoTitle:8" right="24" height="248" taborder="5">
+              <Div id="div_BasicInfo" left="24" top="stc_BasicInfoTitle:8" right="24" height="284" taborder="5">
                 <Layouts>
                   <Layout>
                     <Static id="stc_AmorType" text="Amortization Type" left="0" top="0" width="240" height="72" cssclass="stc_WF_LabelBg" taborder="8"/>
                     <Static id="stc_AmorType_Bg" left="stc_AmorType:-1" top="0" right="0" height="72" cssclass="stc_WF_DataBg" taborder="9"/>
-                    <Radio id="rdo_AmortType" left="stc_AmorType:16" top="4" width="1050" height="32" innerdataset="ds_AmortType" codecolumn="code" datacolumn="value" direction="horizontal" columncount="-1" rowcount="1" cssclass="rdo_WF_Normal" taborder="0"/>
-                    <CheckBox id="chk_Digest" text="Digest Amortization Processing" left="stc_AmorType:16" top="rdo_AmortType:0" width="300" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="1"/>
-                    <CheckBox id="chk_Manual" text="Manual" left="chk_Digest:16" top="rdo_AmortType:0" width="120" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="2"/>
-                    <Static id="stc_RefNum" text="Reference Number" left="0" top="stc_AmorType:-1" width="240" height="36" cssclass="stc_WF_LabelBg" taborder="10"/>
-                    <Static id="stc_RefNum_Bg" left="stc_RefNum:-1" top="stc_AmorType:-1" right="0" height="36" cssclass="stc_WF_DataBg" taborder="11"/>
-                    <Edit id="edt_Ref1" left="stc_RefNum:8" top="stc_AmorType:1" width="120" height="32" cssclass="edt_WF_Normal" maxlength="8" taborder="3"/>
-                    <Static id="stc_RefLine" left="edt_Ref1:8" top="stc_AmorType:-1" width="1" height="36" background="#D3D3D3" taborder="18"/>
-                    <Edit id="edt_Ref2" left="stc_RefLine:8" top="stc_AmorType:1" width="500" height="32" cssclass="edt_WF_Transparent" readonly="true" taborder="4"/>
-                    <Static id="stc_DocNum" text="Document Number" left="0" top="stc_RefNum:-1" width="240" height="36" cssclass="stc_WF_LabelBg" taborder="12"/>
-                    <Static id="stc_DocNum_Bg" left="stc_DocNum:-1" top="stc_RefNum:-1" right="0" height="36" cssclass="stc_WF_DataBg" taborder="13"/>
-                    <Edit id="edt_DocNo" left="stc_DocNum:8" top="stc_RefNum:1" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20" taborder="5"/>
+                    <Div id="div_AmorType" left="stc_AmorType:-1" top="0" right="0" height="72" taborder="0" background="transparent" formscrollbartype="none">
+                      <Layouts>
+                        <Layout>
+                          <Radio id="rdo_AmortType" left="16" top="4" width="1050" height="32" innerdataset="ds_AmortType" codecolumn="code" datacolumn="value" direction="horizontal" columncount="-1" rowcount="1" cssclass="rdo_WF_Normal" taborder="0"/>
+                          <CheckBox id="chk_Digest" text="Digest Amortization Processing" left="10" top="rdo_AmortType:0" width="300" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="1"/>
+                          <CheckBox id="chk_Manual" text="Manual" left="chk_Digest:120" top="rdo_AmortType:0" width="120" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="2"/>
+                        </Layout>
+                      </Layouts>
+                    </Div>
+                    <Static id="stc_RefNum" text="Reference Number" left="0" top="stc_AmorType:-1" width="240" height="54" cssclass="stc_WF_LabelBg" taborder="10" vAlign="middle"/>
+                    <Static id="stc_RefNum_Bg" left="stc_RefNum:-1" top="stc_AmorType:-1" right="0" height="54" cssclass="stc_WF_DataBg" taborder="11"/>
+                    <Edit id="edt_Ref1" left="stc_RefNum:8" top="stc_AmorType:10" width="120" height="32" cssclass="edt_WF_Normal" maxlength="8" taborder="3"/>
+                    <Static id="stc_RefLine" left="edt_Ref1:8" top="stc_AmorType:-1" width="1" height="54" background="#D3D3D3" taborder="18"/>
+                    <Edit id="edt_Ref2" left="stc_RefLine:8" top="stc_AmorType:10" width="500" height="32" cssclass="edt_WF_Transparent" readonly="true" taborder="4"/>
+                    <Static id="stc_DocNum" text="Document Number" left="0" top="stc_RefNum:-1" width="240" height="54" cssclass="stc_WF_LabelBg" taborder="12" vAlign="middle"/>
+                    <Static id="stc_DocNum_Bg" left="stc_DocNum:-1" top="stc_RefNum:-1" right="0" height="54" cssclass="stc_WF_DataBg" taborder="13"/>
+                    <Edit id="edt_DocNo" left="stc_DocNum:8" top="stc_RefNum:10" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20" taborder="5"/>
                     <Static id="stc_CountRefNum" text="Counterparty Reference&#10;Number" left="0" top="stc_DocNum:-1" width="240" height="54" cssclass="stc_WF_LabelBg" vAlign="middle" taborder="14"/>
                     <Static id="stc_CountRefNum_Bg" left="stc_CountRefNum:-1" top="stc_DocNum:-1" right="0" height="54" cssclass="stc_WF_DataBg" taborder="15"/>
                     <Edit id="edt_CpRefNo" left="stc_CountRefNum:8" top="stc_DocNum:10" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20" taborder="6"/>
@@ -84,7 +90,6 @@
                     <Combo id="cmb_Fiscal" left="stc_D1:8" top="41" width="150" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_Fiscal" codecolumn="code" datacolumn="value" taborder="4"/>
                     <Static id="stc_D3" left="stc_D2:-1" top="35" width="312" height="44" cssclass="stc_WF_DataBg"/>
                     <Combo id="cmb_Method" left="stc_D2:8" top="41" width="200" height="32" cssclass="cmb_WF_Normal" innerdataset="ds_Method" codecolumn="code" datacolumn="value" taborder="5"/>
-                    <!-- Loss Classification và Deferred cùng width 265 -->
                     <Static id="stc_D4" left="stc_D3:-1" top="35" width="265" height="44" cssclass="stc_WF_DataBg"/>
                     <Static id="stc_D5" left="stc_D4:-1" top="35" right="0" height="44" cssclass="stc_WF_DataBg"/>
                     <CheckBox id="chk_Deferred" text="Yes" left="stc_D4:16" top="41" width="80" height="34" cssclass="bigcheck" truevalue="1" falsevalue="0" taborder="6"/>
@@ -229,11 +234,16 @@ this.fn_initMockData = function()
 this.btn_Execute_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
     this.alert("Execute Action Triggered for Amortization Registration.");
-};]]></Script>
+};
+this.div_MainCard_div_BasicInfo_div_AmorType_divAmortTypeInner_divAmortTypeChb_chk_Digest_onclick = function(obj:nexacro.CheckBox,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
     <Bind>
-      <BindItem id="item0" compid="div_MainCard.form.div_BasicInfo.form.rdo_AmortType" propid="value" datasetid="ds_FormData" columnid="amortType"/>
-      <BindItem id="item1" compid="div_MainCard.form.div_BasicInfo.form.chk_Digest" propid="value" datasetid="ds_FormData" columnid="digestProc"/>
-      <BindItem id="item2" compid="div_MainCard.form.div_BasicInfo.form.chk_Manual" propid="value" datasetid="ds_FormData" columnid="manualProc"/>
+      <BindItem id="item0" compid="div_MainCard.form.div_BasicInfo.form.div_AmorType.form.rdo_AmortType" propid="value" datasetid="ds_FormData" columnid="amortType"/>
+      <BindItem id="item1" compid="div_MainCard.form.div_BasicInfo.form.div_AmorType.form.chk_Digest" propid="value" datasetid="ds_FormData" columnid="digestProc"/>
+      <BindItem id="item2" compid="div_MainCard.form.div_BasicInfo.form.div_AmorType.form.chk_Manual" propid="value" datasetid="ds_FormData" columnid="manualProc"/>
       <BindItem id="item3" compid="div_MainCard.form.div_BasicInfo.form.edt_Ref1" propid="value" datasetid="ds_FormData" columnid="refNo1"/>
       <BindItem id="item4" compid="div_MainCard.form.div_BasicInfo.form.edt_Ref2" propid="value" datasetid="ds_FormData" columnid="refNo2"/>
       <BindItem id="item5" compid="div_MainCard.form.div_BasicInfo.form.edt_DocNo" propid="value" datasetid="ds_FormData" columnid="docNo"/>

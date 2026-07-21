@@ -3,12 +3,12 @@
   <CSSData><![CDATA[]]></CSSData>
   <CSSData type="desktop"><![CDATA[.Form
 {
-    /* FIX Item 21: Base text 16px */
-    font: normal 16px/normal 'Noto Sans';
-    color: #1A1A1A;
-    background : #ffffff;
-    -nexa-border : 0px none;
+	font:  16px/normal 'Noto Sans';
+	 color: #1A1A1A;
+	background : #ffffff;
+	-nexa-border : 0px none;
 }
+
 
 /* Khối Card màu trắng */
 .Div.div_WF_MainCard {
@@ -39,15 +39,13 @@
     font: normal 16px/normal 'Noto Sans';
     color: #1A1A1A;
     -nexa-icon: url('imagerc::radio_unchecked_24.png');
-    -nexa-text-padding: 0px 0px 0px 8px; /* Khoảng cách từ icon tròn đến chữ */
+    -nexa-text-padding: 0px 0px 0px 8px;
 }
 
 .Radio.rdo_WF_Normal .radioitem[userstatus=selected] 
 {
     -nexa-icon: url('imagerc::radio_checked_24.png');
 }
-/*
-
 /* ====================================================================
    TABLE STRUCTURE
 ==================================================================== */
@@ -113,13 +111,21 @@
 /* ====================================================================
    INPUTS (EDIT & COMBOBOX & CHECKBOX)
 ==================================================================== */
-.Edit.edt_WF_Normal,
+.Edit.edt_WF_Normal {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #C4C4C4;
+    color: #1A1A1A;
+    font: normal 16px/normal 'Noto Sans';
+    -nexa-padding: 0px 8px 0px 8px;
+}
+
+/* >>> UPDATE: chỉ Combo mới cần chừa chỗ cho mũi tên dropdown */
 .Combo.cmb_WF_Normal {
     background: #FFFFFF;
     -nexa-border: 1px solid #C4C4C4;
     color: #1A1A1A;
-    /* FIX Item 21: Base Input Text 16px */
     font: normal 16px/normal 'Noto Sans';
+    -nexa-padding: 0px 24px 0px 8px;
 }
 
 .Edit.edt_WF_Normal[status=mouseover],
@@ -145,7 +151,7 @@
 }
 
 .Grid.grd_WF_Standard .head .row .cell {
-    background: #ACACAC;
+    background: #D9D9D9;
     -nexa-border: 1px solid #D3D3D3;
     font: bold 15px/normal 'Noto Sans';
     color: #1A1A1A;
@@ -166,11 +172,37 @@
     -nexa-icon: url('imagerc::chk_WF_Box_24_S.png');
 }
 
+
 .Edit.cell_WF_InnerEdit {
     background: transparent;
     font: 15px/normal 'Noto Sans';
     -nexa-border: 0px none;
-}]]></CSSData>
+}
+.TextArea.txta_WF_Normal {
+    background: #FFFFFF none;
+    -nexa-border: 1px solid #B1B1B1;
+    color: #1A1A1A;
+    font: 16px/normal 'Noto Sans';
+    -nexa-padding: 8px;
+}
+
+.TextArea.txta_WF_Normal[status=mouseover],
+.TextArea.txta_WF_Normal[status=focused] {
+    -nexa-border: 1px solid #0D5FC0;
+}
+.Button.btn_WF_Secondary {
+    background: #FFFFFF;
+    -nexa-border: 1px solid #0D5FC0;
+    color: #0D5FC0;
+    border-radius: 10px;
+    font: bold 16px 'Noto Sans';
+}
+
+.Button.btn_WF_Secondary[status=mouseover],
+.Button.btn_WF_Secondary[status=focused] {
+    background: #F0F4FA; /* Màu nền xanh nhạt khi hover */
+}
+]]></CSSData>
   <CSSData type="mobile_large"><![CDATA[]]></CSSData>
   <CSSData type="mobile_small"><![CDATA[]]></CSSData>
   <CSSData type="mobile_medium"><![CDATA[]]></CSSData>
