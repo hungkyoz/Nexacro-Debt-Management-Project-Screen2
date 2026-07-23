@@ -1,118 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="CustomerInformationDetail" width="1920" height="1200" titletext="Customer Information Detail" onload="CustomerInformationDetail_onload">
+  <Form id="CustomerInformationDetail" width="1720" height="1450" titletext="Customer Information Detail" onload="CustomerInformationDetail_onload">
     <Layouts>
-      <Layout height="1200" width="1920">
-        <Div id="div_MainCard" taborder="0" left="32" top="32" right="32" bottom="32" cssclass="div_WF_MainCard">
+      <Layout height="1450" width="1720">
+        <Div id="div_HeaderArea" taborder="1" left="0" top="0" right="0" height="64">
           <Layouts>
             <Layout>
-              <Button id="btn_Back" taborder="0" left="24" top="24" width="32" height="32" cssclass="btn_WF_BackIcon"/>
-              <Static id="stc_TitleMain" taborder="1" text="Customer Information Detail" left="btn_Back:16" top="24" width="400" height="32" cssclass="stc_WF_TitleMain"/>
-              <Button id="btn_CustomerList" taborder="4" text="Customer List" top="24" width="140" height="40" right="24" cssclass="btn_WF_HighImportance"/>
-              <Button id="btn_Next" taborder="3" text="Next" top="24" width="100" height="40" right="btn_CustomerList:16" cssclass="btn_WF_Secondary"/>
-              <Combo id="cmb_CustDetail" taborder="2" top="28" width="200" height="32" right="btn_Next:16" cssclass="cmb_WF_Normal" text="Customer Detail"/>
-              <Div id="div_BasicInfo" taborder="5" left="24" top="88" right="24" height="145">
+              <Button id="btn_BackBtn" top="10" left="16" width="40" height="40" icon="url('imagerc::arrow_circle_left_40dp_558ED1_FILL0_wght400_GRAD0_opsz40.png')" cssclass="btnBackicon" taborder="0"/>
+              <Static id="stc_ScrnCode" taborder="3" text="MAA2" left="btn_BackBtn:8" top="14" width="60" height="32" cssclass="stcScreenID"/>
+              <Static id="stc_MainTitle" text="Customer Information Detail" left="stc_ScrnCode:-16" top="12" width="720" cssclass="stc_WF_TitleMain" taborder="1" bottom="14"/>
+              <Button id="btn_ViewList" text="Customer List" top="10" width="160" cssclass="btn_WF_HighImportance" taborder="2" bottom="10" right="16"/>
+              <Static id="stc_DividerLine" left="0" bottom="0" right="0" height="1" cssclass="stc_WF_Line" taborder="4"/>
+              <Button id="btn_NextStep" text="Next" top="10" width="160" cssclass="btn_WF_Secondary" taborder="6" bottom="10" right="btn_ViewList:16"/>
+              <Combo id="cmb_DetailType" taborder="5" text="Customer Detail" top="14" value="" index="-1" bottom="14" width="356" right="btn_NextStep:14" cssclass="cmb_WF_Normal"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="div_BodyContent" taborder="0" left="32" top="div_HeaderArea:8" right="32" bottom="0">
+          <Layouts>
+            <Layout>
+              <Div id="div_BaseInfo" left="0" top="0" right="0" height="256">
                 <Layouts>
                   <Layout>
-                    <Static id="stc_CustNo" text="Customer Number" left="0" top="0" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_CustNo_Bg" left="stc_CustNo:-1" top="0" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_CustNo" taborder="0" left="stc_CustNo:7" top="2" width="200" height="32" cssclass="edt_WF_Normal" maxlength="20"/>
-                    <Static id="stc_CustName" text="Customer Name" left="0" top="35" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_CustName_Bg" left="stc_CustName:-1" top="35" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_CustName" taborder="1" left="stc_CustName:7" top="37" right="8" height="32" cssclass="edt_WF_Normal"/>
-                    <Static id="stc_LastUpdate" text="Last Update Date" left="0" top="70" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_LastUpdate_Bg" left="stc_LastUpdate:-1" top="70" width="300" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_LastUpdate" taborder="2" left="stc_LastUpdate:7" top="72" width="280" height="32" cssclass="edt_WF_Normal"/>
-                    <Static id="stc_LastUpdatedBy" text="Last Updated By" left="stc_LastUpdate_Bg:-1" top="70" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_LastUpdatedBy_Bg" left="stc_LastUpdatedBy:-1" top="70" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_LastUpdatedBy" taborder="3" left="stc_LastUpdatedBy:7" top="72" right="8" height="32" cssclass="edt_WF_Normal"/>
-                    <Static id="stc_Expiry" text="Expiry Date" left="0" top="105" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_Expiry_Bg" left="stc_Expiry:-1" top="105" width="200" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Expiry" taborder="4" left="stc_Expiry:7" top="107" width="180" height="32" cssclass="edt_WF_Normal"/>
-                    <Static id="stc_Acquisition" text="Acquisition Date" left="stc_Expiry_Bg:-1" top="105" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_Acquisition_Bg" left="stc_Acquisition:-1" top="105" width="200" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Acquisition" taborder="5" left="stc_Acquisition:7" top="107" width="180" height="32" cssclass="edt_WF_Normal"/>
-                    <Static id="stc_NumLicenses" text="Number of Licenses" left="stc_Acquisition_Bg:-1" top="105" width="180" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_NumLicenses_Bg" left="stc_NumLicenses:-1" top="105" width="120" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_NumLicenses" taborder="6" left="stc_NumLicenses:7" top="107" width="100" height="32" cssclass="edt_WF_Normal"/>
-                    <Static id="stc_CopySave" text="Copy Save" left="stc_NumLicenses_Bg:-1" top="105" width="120" height="36" cssclass="stc_WF_LabelBg"/>
-                    <Static id="stc_CopySave_Bg" left="stc_CopySave:-1" top="105" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_CopySave" taborder="7" left="stc_CopySave:7" top="107" width="80" height="32" cssclass="edt_WF_Normal"/>
+                    <Static id="stc_CustomerNo" text="Customer Number" top="0" left="0" width="160" height="36" cssclass="stc_WF_LabelBg"/>
+                    <Static id="stc_CustomerNo_Bg" left="stc_CustomerNo:-1" top="0" right="0" height="36" cssclass="stc_WF_DataBg"/>
+                    <Div id="div_CustomerNoBg" taborder="3" left="stc_CustomerNo:-1" top="0" height="36" right="0" background="transparent" border="0px none">
+                      <Layouts>
+                        <Layout>
+                          <Edit id="edt_CustomerNo" left="9" top="3" readonly="false" maxlength="18" width="164" taborder="0" height="30" cssclass="edt_WF_Normal"/>
+                        </Layout>
+                      </Layouts>
+                    </Div>
+                    <Static id="stc_CustomerNm" text="Customer Name" top="stc_CustomerNo:8" left="0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="4"/>
+                    <Static id="stc_LastUpdDt" text="Last Update Date" top="stc_CustomerNm:8" left="0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="5"/>
+                    <Static id="stc_LicName" text="License Name" top="stc_LastUpdDt:8" left="0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="6"/>
+                    <Static id="stc_LicNo" text="License Number" top="stc_LicName:8" left="0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="8"/>
+                    <Static id="stc_ExpireDt" text="Expiry Date" top="stc_LicNo:8" left="0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="10"/>
+                    <Edit id="edt_CustomerNm" taborder="7" left="stc_CustomerNm:0" top="44" height="36" right="0" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_LicName" taborder="8" left="stc_LicName:0" top="132" height="36" right="0" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_LicNo" taborder="9" left="stc_LicNo:0" top="176" height="36" right="0" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_LastUpdDt" taborder="10" left="stc_LastUpdDt:0" top="88" height="36" width="170" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_ExpireDt" taborder="11" left="stc_ExpireDt:0" top="220" height="36" width="170" cssclass="edt_WF_Normal"/>
+                    <Static id="stc_LastUpdBy" text="Last Update By" top="88" left="edt_LastUpdDt:0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="12"/>
+                    <Static id="stc_AcqDate" text="Acquisition Date" top="220" left="edt_ExpireDt:0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="13"/>
+                    <Edit id="edt_AcqDate" taborder="14" left="stc_AcqDate:0" top="220" height="36" width="170" cssclass="edt_WF_Normal"/>
+                    <Static id="stc_LicCount" text="Number of Licenses" top="220" left="edt_AcqDate:0" width="172" height="36" cssclass="stc_WF_LabelBg" taborder="15"/>
+                    <Edit id="edt_LicCount" taborder="16" left="stc_LicCount:0" top="220" height="36" width="50" cssclass="edt_WF_Normal"/>
+                    <Static id="stc_CopySave" text="Copy Save" top="220" left="edt_LicCount:0" width="160" height="36" cssclass="stc_WF_LabelBg" taborder="17"/>
+                    <Edit id="edt_LastUpdBy" taborder="18" left="stc_LastUpdBy:0" top="88" height="36" right="0" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_CopySave" taborder="19" left="stc_CopySave:0" top="220" height="36" right="0" cssclass="edt_WF_Normal"/>
                   </Layout>
                 </Layouts>
               </Div>
-              <Div id="div_DeliveryTable" taborder="6" left="24" top="249" right="24" height="150">
+              <Div id="div_DlvryResultArea" left="0" top="div_BaseInfo:8" right="0" height="144" taborder="7">
                 <Layouts>
                   <Layout>
-                    <Static id="stc_Del_H1" text="Delivery Result Date" left="0" top="0" width="25%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Del_H2" text="Share" left="stc_Del_H1:-1" top="0" width="15%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Del_H3" text="Investor Name" left="stc_Del_H2:-1" top="0" width="35%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Del_H4" text="Investment Ratio" left="stc_Del_H3:-1" top="0" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Del_R1_C1" left="0" top="35" width="25%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R1_C1" left="7" top="37" width="200" height="32" cssclass="edt_WF_Normal" value="NNNNNNNNNNNNNNNN"/>
-                    <Static id="stc_Del_R1_C2" left="stc_Del_R1_C1:-1" top="35" width="15%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R1_C2" left="stc_Del_R1_C1:7" top="37" width="100" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Del_R1_C3" left="stc_Del_R1_C2:-1" top="35" width="35%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R1_C3" left="stc_Del_R1_C2:7" top="37" width="300" height="32" cssclass="edt_WF_Normal" value="NNNNNNNNNNNNNNNN"/>
-                    <Static id="stc_Del_R1_C4" left="stc_Del_R1_C3:-1" top="35" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R1_C4" left="stc_Del_R1_C3:7" top="37" right="8" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Del_R2_C1" left="0" top="70" width="25%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R2_C1" left="7" top="72" width="200" height="32" cssclass="edt_WF_Normal" value="NNNNNNNNNNNNNNNN"/>
-                    <Static id="stc_Del_R2_C2" left="stc_Del_R2_C1:-1" top="70" width="15%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R2_C2" left="stc_Del_R2_C1:7" top="72" width="100" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Del_R2_C3" left="stc_Del_R2_C2:-1" top="70" width="35%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R2_C3" left="stc_Del_R2_C2:7" top="72" width="300" height="32" cssclass="edt_WF_Normal" value="NNNNNNNNNNNNNNNN"/>
-                    <Static id="stc_Del_R2_C4" left="stc_Del_R2_C3:-1" top="70" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Del_R2_C4" left="stc_Del_R2_C3:7" top="72" right="8" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
+                    <Static id="stc_Dlv_H1" text="Delivery Result Date" top="0" left="0" width="250" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="0"/>
+                    <Static id="stc_Dlv_H2" text="Share" top="0" left="stc_Dlv_H1:0" width="80" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="1"/>
+                    <Static id="stc_Dlv_H3" text="Investor Name" top="0" left="stc_Dlv_H2:0" width="250" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="2"/>
+                    <Static id="stc_Dlv_H4" text="Investor Ratio" top="0" left="stc_Dlv_H3:0" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="3" right="0"/>
+                    <Edit id="edt_DlvDt_1" taborder="4" left="0" top="stc_Dlv_H1:0" width="250" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_DlvDt_2" taborder="5" left="0" top="edt_DlvDt_1:0" width="250" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_DlvDt_3" taborder="6" left="0" top="edt_DlvDt_2:0" width="250" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_DlvShare_1" taborder="7" left="edt_DlvDt_1:0" top="36" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_DlvShare_2" taborder="8" left="edt_DlvDt_2:0" top="72" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_DlvShare_3" taborder="9" left="edt_DlvDt_3:0" top="108" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_DlvInv_1" taborder="10" left="edt_DlvShare_1:0" top="36" width="250" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_DlvInv_2" taborder="11" left="edt_DlvShare_2:0" top="72" width="250" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_DlvInv_3" taborder="12" left="edt_DlvShare_3:0" top="108" width="250" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_DlvRto_1" taborder="13" left="edt_DlvInv_1:0" top="36" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
+                    <Edit id="edt_DlvRto_2" taborder="14" left="edt_DlvInv_2:0" top="72" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
+                    <Edit id="edt_DlvRto_3" taborder="15" left="edt_DlvInv_3:0" top="108" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
                   </Layout>
                 </Layouts>
               </Div>
-              <Div id="div_PartnerTable" taborder="7" left="24" top="420" right="24" height="280">
+              <Div id="div_BizPartnerArea" taborder="3" left="0" top="div_DlvryResultArea:8" height="270" right="0">
                 <Layouts>
                   <Layout>
-                    <Static id="stc_Part_H1_Main" text="Business Partner Information" left="0" top="0" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_1" text="Main Customers" left="0" top="35" width="15%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_2" text="Share (%)" left="stc_Part_H2_1:-1" top="35" width="8%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_3" text="Cash" left="stc_Part_H2_2:-1" top="35" width="8%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_4" text="Bill" left="stc_Part_H2_3:-1" top="35" width="8%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_5" text="Collection Cycle" left="stc_Part_H2_4:-1" top="35" width="11%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_6" text="Main Suppliers" left="stc_Part_H2_5:-1" top="35" width="15%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_7" text="Share (%)" left="stc_Part_H2_6:-1" top="35" width="8%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_8" text="Cash" left="stc_Part_H2_7:-1" top="35" width="8%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_9" text="Bill" left="stc_Part_H2_8:-1" top="35" width="8%" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_H2_10" text="Payment Cycle" left="stc_Part_H2_9:-1" top="35" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <Static id="stc_Part_R1_1" left="0" top="70" width="15%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_1" left="7" top="72" width="90%" height="32" cssclass="edt_WF_Normal" value="NNNNNNNN"/>
-                    <Static id="stc_Part_R1_2" left="stc_Part_R1_1:-1" top="70" width="8%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_2" left="stc_Part_R1_1:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Part_R1_3" left="stc_Part_R1_2:-1" top="70" width="8%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_3" left="stc_Part_R1_2:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Part_R1_4" left="stc_Part_R1_3:-1" top="70" width="8%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_4" left="stc_Part_R1_3:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Part_R1_5" left="stc_Part_R1_4:-1" top="70" width="11%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_5" left="stc_Part_R1_4:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9Days"/>
-                    <Static id="stc_Part_R1_6" left="stc_Part_R1_5:-1" top="70" width="15%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_6" left="stc_Part_R1_5:7" top="72" width="90%" height="32" cssclass="edt_WF_Normal" value="NNNNNNNN"/>
-                    <Static id="stc_Part_R1_7" left="stc_Part_R1_6:-1" top="70" width="8%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_7" left="stc_Part_R1_6:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Part_R1_8" left="stc_Part_R1_7:-1" top="70" width="8%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_8" left="stc_Part_R1_7:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Part_R1_9" left="stc_Part_R1_8:-1" top="70" width="8%" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_9" left="stc_Part_R1_8:7" top="72" width="80%" height="32" cssclass="edt_WF_Normal" value="ZZ9%"/>
-                    <Static id="stc_Part_R1_10" left="stc_Part_R1_9:-1" top="70" right="0" height="36" cssclass="stc_WF_DataBg"/>
-                    <Edit id="edt_Part_R1_10" left="stc_Part_R1_9:7" top="72" right="8" height="32" cssclass="edt_WF_Normal" value="ZZ9Days"/>
+                    <Static id="stc_BizHeadMain" text="Business Partner Information" top="0" left="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="0" right="0"/>
+                    <Static id="stc_BizCustHead" text="Main Customers" top="stc_BizHeadMain:0" left="0" width="150" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="1"/>
+                    <Static id="stc_BizCShareHead" text="Share(%)" top="stc_BizHeadMain:0" left="stc_BizCustHead:0" width="80" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="2"/>
+                    <Static id="stc_BizCCashHead" text="Cash" top="stc_BizHeadMain:0" left="stc_BizCShareHead:0" width="80" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="3"/>
+                    <Static id="stc_BizCBillHead" text="Bill" top="stc_BizHeadMain:0" left="stc_BizCCashHead:0" width="80" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="4"/>
+                    <Static id="stc_BizCCycleHead" text="Collection&#10;Cycle" top="stc_BizHeadMain:0" left="stc_BizCBillHead:0" width="130" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="5"/>
+                    <Static id="stc_BizSuppHead" text="Main Suppliers" top="stc_BizHeadMain:0" left="stc_BizCCycleHead:0" width="150" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="6"/>
+                    <Static id="stc_BizSShareHead" text="Share(%)" top="stc_BizHeadMain:0" left="stc_BizSuppHead:0" width="80" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="7"/>
+                    <Static id="stc_BizSCashHead" text="Cash" top="stc_BizHeadMain:0" left="stc_BizSShareHead:0" width="80" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="8"/>
+                    <Static id="stc_BizSBillHead" text="Bill" top="stc_BizHeadMain:0" left="stc_BizSCashHead:0" width="80" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="9"/>
+                    <Static id="stc_BizSCycleHead" text="Payment &#13;&#10;Cycle" top="stc_BizHeadMain:0" left="stc_BizSBillHead:0" height="54" cssclass="stc_WF_LabelBg" textAlign="center" taborder="10" right="0"/>
+                    <Edit id="edt_BizCust_1" taborder="11" left="0" top="stc_BizCustHead:0" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizCust_2" taborder="12" left="0" top="edt_BizCust_1:0" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizCust_3" taborder="13" left="0" top="edt_BizCust_2:0" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizCust_4" taborder="14" left="0" top="edt_BizCust_3:0" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizCust_5" taborder="15" left="0" top="edt_BizCust_4:0" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizCShare_1" taborder="16" left="edt_BizCust_1:0" top="90" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCShare_2" taborder="17" left="edt_BizCust_2:0" top="126" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCShare_3" taborder="18" left="edt_BizCust_3:0" top="162" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCShare_4" taborder="19" left="edt_BizCust_4:0" top="198" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCShare_5" taborder="20" left="edt_BizCust_5:0" top="234" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCash_1" taborder="30" left="edt_BizCShare_1:0" top="90" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCash_2" taborder="29" left="edt_BizCShare_2:0" top="126" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCash_3" taborder="28" left="edt_BizCShare_3:0" top="162" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCash_4" taborder="27" left="edt_BizCShare_4:0" top="198" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCash_5" taborder="26" left="edt_BizCShare_5:0" top="234" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCBill_1" taborder="35" left="edt_BizCCash_1:0" top="90" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCBill_2" taborder="34" left="edt_BizCCash_2:0" top="126" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCBill_3" taborder="33" left="edt_BizCCash_3:0" top="162" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCBill_4" taborder="32" left="edt_BizCCash_4:0" top="198" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCBill_5" taborder="31" left="edt_BizCCash_5:0" top="234" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCycle_1" taborder="40" left="edt_BizCBill_1:0" top="90" width="130" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCycle_2" taborder="39" left="edt_BizCBill_2:0" top="126" width="130" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCycle_3" taborder="38" left="edt_BizCBill_3:0" top="162" width="130" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCycle_4" taborder="37" left="edt_BizCBill_4:0" top="198" width="130" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizCCycle_5" taborder="36" left="edt_BizCBill_5:0" top="234" width="130" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSupp_1" taborder="45" left="edt_BizCCycle_1:0" top="90" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizSupp_2" taborder="44" left="edt_BizCCycle_2:0" top="126" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizSupp_3" taborder="43" left="edt_BizCCycle_3:0" top="162" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizSupp_4" taborder="42" left="edt_BizCCycle_4:0" top="198" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizSupp_5" taborder="41" left="edt_BizCCycle_5:0" top="234" width="150" height="36" cssclass="edt_WF_Normal"/>
+                    <Edit id="edt_BizSShare_1" taborder="25" left="edt_BizSupp_1:0" top="90" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSShare_2" taborder="24" left="edt_BizSupp_2:0" top="126" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSShare_3" taborder="23" left="edt_BizSupp_3:0" top="162" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSShare_4" taborder="22" left="edt_BizSupp_4:0" top="198" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSShare_5" taborder="21" left="edt_BizSupp_5:0" top="234" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSCash_1" taborder="46" left="edt_BizSShare_1:0" top="90" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSCash_2" taborder="47" left="edt_BizSShare_2:0" top="126" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSCash_3" taborder="50" left="edt_BizSShare_3:0" top="162" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSCash_4" taborder="52" left="edt_BizSShare_4:0" top="198" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSCash_5" taborder="55" left="edt_BizSShare_5:0" top="234" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSBill_1" taborder="48" left="edt_BizSCash_1:0" top="90" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSBill_2" taborder="49" left="edt_BizSCash_2:0" top="126" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSBill_3" taborder="51" left="edt_BizSCash_3:0" top="162" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSBill_4" taborder="53" left="edt_BizSCash_4:0" top="198" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSBill_5" taborder="54" left="edt_BizSCash_5:0" top="234" width="80" height="36" cssclass="edt_WF_Normal" textAlign="center"/>
+                    <Edit id="edt_BizSCycle_1" taborder="56" left="edt_BizSBill_1:0" top="90" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
+                    <Edit id="edt_BizSCycle_2" taborder="57" left="edt_BizSBill_2:0" top="126" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
+                    <Edit id="edt_BizSCycle_3" taborder="58" left="edt_BizSBill_3:0" top="162" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
+                    <Edit id="edt_BizSCycle_4" taborder="59" left="edt_BizSBill_4:0" top="198" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
+                    <Edit id="edt_BizSCycle_5" taborder="60" left="edt_BizSBill_5:0" top="234" height="36" right="0" cssclass="edt_WF_Normal" textAlign="right"/>
                   </Layout>
                 </Layouts>
               </Div>
-              <Div id="div_TextAreas" taborder="8" left="24" top="720" right="24" height="420">
+              <Div id="div_TextAreaGroup" left="0" top="div_BizPartnerArea:8" right="320" height="766" taborder="7">
                 <Layouts>
                   <Layout>
-                    <Static id="stc_History" text="History / Representative Background, etc." left="0" top="0" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <TextArea id="txta_History" taborder="0" left="0" top="35" right="0" height="90" cssclass="txta_WF_Normal"/>
-                    <Static id="stc_Features" text="Company Features / Notable Items, etc." left="0" top="135" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <TextArea id="txta_Features" taborder="1" left="0" top="170" right="0" height="90" cssclass="txta_WF_Normal"/>
-                    <Static id="stc_NextReport" text="Items for Next Report" left="0" top="270" right="0" height="36" cssclass="stc_WF_LabelBg" textAlign="center"/>
-                    <TextArea id="txta_NextReport" taborder="2" left="0" top="305" right="0" height="90" cssclass="txta_WF_Normal"/>
+                    <Static id="stc_DescHistory" text="History / Representative Background, etc." top="0" left="0" width="750" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="1"/>
+                    <TextArea id="txta_DescHistory" taborder="0" left="0" top="stc_DescHistory:0" width="750" height="190" cssclass="txta_WF_Normal"/>
+                    <Static id="stc_DescFeature" text="Company Features / Notable Items, etc " top="txta_DescHistory:0" left="0" width="750" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="2"/>
+                    <TextArea id="txta_DescFeature" taborder="3" left="0" top="stc_DescFeature:0" width="750" height="125" cssclass="txta_WF_Normal"/>
+                    <Static id="stc_DescNextRep" text="Items for Next Report" top="txta_DescFeature:0" left="0" width="750" height="36" cssclass="stc_WF_LabelBg" textAlign="center" taborder="5"/>
+                    <TextArea id="txta_DescNextRep" taborder="4" left="0" top="stc_DescNextRep:0" width="750" height="230" cssclass="txta_WF_Normal"/>
                   </Layout>
                 </Layouts>
               </Div>
@@ -128,28 +165,274 @@
 
 this.fn_initMockData = function()
 {
-    // Mock Data cho Basic Info
-    this.div_MainCard.form.div_BasicInfo.form.edt_CustNo.set_value("XXXXXXXXX");
-    this.div_MainCard.form.div_BasicInfo.form.edt_CustName.set_value("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
-    this.div_MainCard.form.div_BasicInfo.form.edt_LastUpdate.set_value("NN99Yr99Mo99Da");
-    this.div_MainCard.form.div_BasicInfo.form.edt_LastUpdatedBy.set_value("NNNNNNNNNNNNNNNNNNNNN");
-    this.div_MainCard.form.div_BasicInfo.form.edt_Expiry.set_value("NN99Yr99Mo99Day");
-    this.div_MainCard.form.div_BasicInfo.form.edt_Acquisition.set_value("NN99Yr99Mo99Day");
-    this.div_MainCard.form.div_BasicInfo.form.edt_NumLicenses.set_value("ZZ9");
-    this.div_MainCard.form.div_BasicInfo.form.edt_CopySave.set_value("N");
+    this.ds_ScreenData.clearData();
+    var nRow = this.ds_ScreenData.addRow();
 
-    // Mock Data cho Text Areas
-    var sampleText = "NNNNNNNNNNNNNNNNNNNNNNNNNNNN\nNNNNNNNNNNNNNNNNNNNNNNNNNNNN";
-    this.div_MainCard.form.div_TextAreas.form.txta_History.set_value(sampleText);
-    this.div_MainCard.form.div_TextAreas.form.txta_Features.set_value(sampleText);
-    this.div_MainCard.form.div_TextAreas.form.txta_NextReport.set_value(sampleText);
+    this.ds_ScreenData.setColumn(nRow, "customerNo", "XXXXXXXXX");
+    this.ds_ScreenData.setColumn(nRow, "customerNm", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "lastUpdDt", "NN99Yr99Mo99Day");
+    this.ds_ScreenData.setColumn(nRow, "licName", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "licNo", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "expireDt", "NN99Yr99Mo99Day");
+    this.ds_ScreenData.setColumn(nRow, "lastUpdBy", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "acqDate", "NN99Yr99Mo99Day");
+    this.ds_ScreenData.setColumn(nRow, "licCount", "ZZ9");
+    this.ds_ScreenData.setColumn(nRow, "copySaveFlg", "Ｎ");
 
-    /* * Lưu ý: Đối với các Bảng Tĩnh (Delivery Result / Partner Info) 
-     * Ta đã hardcode value mặc định ("NNNNN", "ZZ9%") trực tiếp vào thuộc tính value
-     * của component Edit trong mã XML nên ở Script không cần gán thêm. 
-     * Nếu sau này có API trả về, bạn sẽ gán theo cấu trúc:
-     * this.div_MainCard.form.div_DeliveryTable.form.edt_Del_R1_C1.set_value(data);
-     */
+    this.ds_ScreenData.setColumn(nRow, "dlvDt_1", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "dlvDt_2", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "dlvDt_3", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "dlvShr_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "dlvShr_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "dlvShr_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "dlvInv_1", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "dlvInv_2", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "dlvInv_3", "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "dlvRto_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "dlvRto_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "dlvRto_3", "ZZ9%");
+
+    this.ds_ScreenData.setColumn(nRow, "bizCust_1", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizCust_2", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizCust_3", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizCust_4", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizCust_5", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizCShr_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCShr_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCShr_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCShr_4", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCShr_5", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCCsh_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCCsh_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCCsh_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCCsh_4", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCCsh_5", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCBil_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCBil_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCBil_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCBil_4", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCBil_5", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizCCyc_1", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizCCyc_2", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizCCyc_3", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizCCyc_4", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizCCyc_5", "ZZ9Days");
+
+    this.ds_ScreenData.setColumn(nRow, "bizSupp_1", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizSupp_2", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizSupp_3", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizSupp_4", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizSupp_5", "ＮＮＮＮＮＮＮＮ");
+    this.ds_ScreenData.setColumn(nRow, "bizSShr_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSShr_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSShr_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSShr_4", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSShr_5", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSCsh_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSCsh_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSCsh_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSCsh_4", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSCsh_5", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSBil_1", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSBil_2", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSBil_3", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSBil_4", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSBil_5", "ZZ9%");
+    this.ds_ScreenData.setColumn(nRow, "bizSCyc_1", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizSCyc_2", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizSCyc_3", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizSCyc_4", "ZZ9Days");
+    this.ds_ScreenData.setColumn(nRow, "bizSCyc_5", "ZZ9Days");
+
+    this.ds_ScreenData.setColumn(nRow, "historyInfo",
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+
+    this.ds_ScreenData.setColumn(nRow, "featureInfo",
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
+
+    this.ds_ScreenData.setColumn(nRow, "nextRepInfo",
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ\n" +
+        "ＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮＮ");
 };]]></Script>
+    <Objects>
+      <Dataset id="ds_ScreenData">
+        <ColumnInfo>
+          <Column id="customerNo" type="STRING" size="256"/>
+          <Column id="customerNm" type="STRING" size="256"/>
+          <Column id="lastUpdDt" type="STRING" size="256"/>
+          <Column id="licName" type="STRING" size="256"/>
+          <Column id="licNo" type="STRING" size="256"/>
+          <Column id="expireDt" type="STRING" size="256"/>
+          <Column id="lastUpdBy" type="STRING" size="256"/>
+          <Column id="acqDate" type="STRING" size="256"/>
+          <Column id="licCount" type="STRING" size="256"/>
+          <Column id="copySaveFlg" type="STRING" size="256"/>
+          <Column id="dlvDt_1" type="STRING" size="256"/>
+          <Column id="dlvDt_2" type="STRING" size="256"/>
+          <Column id="dlvDt_3" type="STRING" size="256"/>
+          <Column id="dlvShr_1" type="STRING" size="256"/>
+          <Column id="dlvShr_2" type="STRING" size="256"/>
+          <Column id="dlvShr_3" type="STRING" size="256"/>
+          <Column id="dlvInv_1" type="STRING" size="256"/>
+          <Column id="dlvInv_2" type="STRING" size="256"/>
+          <Column id="dlvInv_3" type="STRING" size="256"/>
+          <Column id="dlvRto_1" type="STRING" size="256"/>
+          <Column id="dlvRto_2" type="STRING" size="256"/>
+          <Column id="dlvRto_3" type="STRING" size="256"/>
+          <Column id="bizCust_1" type="STRING" size="256"/>
+          <Column id="bizCust_2" type="STRING" size="256"/>
+          <Column id="bizCust_3" type="STRING" size="256"/>
+          <Column id="bizCust_4" type="STRING" size="256"/>
+          <Column id="bizCust_5" type="STRING" size="256"/>
+          <Column id="bizCShr_1" type="STRING" size="256"/>
+          <Column id="bizCShr_2" type="STRING" size="256"/>
+          <Column id="bizCShr_3" type="STRING" size="256"/>
+          <Column id="bizCShr_4" type="STRING" size="256"/>
+          <Column id="bizCShr_5" type="STRING" size="256"/>
+          <Column id="bizCCsh_1" type="STRING" size="256"/>
+          <Column id="bizCCsh_2" type="STRING" size="256"/>
+          <Column id="bizCCsh_3" type="STRING" size="256"/>
+          <Column id="bizCCsh_4" type="STRING" size="256"/>
+          <Column id="bizCCsh_5" type="STRING" size="256"/>
+          <Column id="bizCBil_1" type="STRING" size="256"/>
+          <Column id="bizCBil_2" type="STRING" size="256"/>
+          <Column id="bizCBil_3" type="STRING" size="256"/>
+          <Column id="bizCBil_4" type="STRING" size="256"/>
+          <Column id="bizCBil_5" type="STRING" size="256"/>
+          <Column id="bizCCyc_1" type="STRING" size="256"/>
+          <Column id="bizCCyc_2" type="STRING" size="256"/>
+          <Column id="bizCCyc_3" type="STRING" size="256"/>
+          <Column id="bizCCyc_4" type="STRING" size="256"/>
+          <Column id="bizCCyc_5" type="STRING" size="256"/>
+          <Column id="bizSupp_1" type="STRING" size="256"/>
+          <Column id="bizSupp_2" type="STRING" size="256"/>
+          <Column id="bizSupp_3" type="STRING" size="256"/>
+          <Column id="bizSupp_4" type="STRING" size="256"/>
+          <Column id="bizSupp_5" type="STRING" size="256"/>
+          <Column id="bizSShr_1" type="STRING" size="256"/>
+          <Column id="bizSShr_2" type="STRING" size="256"/>
+          <Column id="bizSShr_3" type="STRING" size="256"/>
+          <Column id="bizSShr_4" type="STRING" size="256"/>
+          <Column id="bizSShr_5" type="STRING" size="256"/>
+          <Column id="bizSCsh_1" type="STRING" size="256"/>
+          <Column id="bizSCsh_2" type="STRING" size="256"/>
+          <Column id="bizSCsh_3" type="STRING" size="256"/>
+          <Column id="bizSCsh_4" type="STRING" size="256"/>
+          <Column id="bizSCsh_5" type="STRING" size="256"/>
+          <Column id="bizSBil_1" type="STRING" size="256"/>
+          <Column id="bizSBil_2" type="STRING" size="256"/>
+          <Column id="bizSBil_3" type="STRING" size="256"/>
+          <Column id="bizSBil_4" type="STRING" size="256"/>
+          <Column id="bizSBil_5" type="STRING" size="256"/>
+          <Column id="bizSCyc_1" type="STRING" size="256"/>
+          <Column id="bizSCyc_2" type="STRING" size="256"/>
+          <Column id="bizSCyc_3" type="STRING" size="256"/>
+          <Column id="bizSCyc_4" type="STRING" size="256"/>
+          <Column id="bizSCyc_5" type="STRING" size="256"/>
+          <Column id="historyInfo" type="STRING" size="4096"/>
+          <Column id="featureInfo" type="STRING" size="4096"/>
+          <Column id="nextRepInfo" type="STRING" size="4096"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="bnd_0" compid="div_BodyContent.form.div_BaseInfo.form.div_CustomerNoBg.form.edt_CustomerNo" propid="value" datasetid="ds_ScreenData" columnid="customerNo"/>
+      <BindItem id="bnd_1" compid="div_BodyContent.form.div_BaseInfo.form.edt_CustomerNm" propid="value" datasetid="ds_ScreenData" columnid="customerNm"/>
+      <BindItem id="bnd_2" compid="div_BodyContent.form.div_BaseInfo.form.edt_LastUpdDt" propid="value" datasetid="ds_ScreenData" columnid="lastUpdDt"/>
+      <BindItem id="bnd_3" compid="div_BodyContent.form.div_BaseInfo.form.edt_LicName" propid="value" datasetid="ds_ScreenData" columnid="licName"/>
+      <BindItem id="bnd_4" compid="div_BodyContent.form.div_BaseInfo.form.edt_LicNo" propid="value" datasetid="ds_ScreenData" columnid="licNo"/>
+      <BindItem id="bnd_5" compid="div_BodyContent.form.div_BaseInfo.form.edt_ExpireDt" propid="value" datasetid="ds_ScreenData" columnid="expireDt"/>
+      <BindItem id="bnd_6" compid="div_BodyContent.form.div_BaseInfo.form.edt_LastUpdBy" propid="value" datasetid="ds_ScreenData" columnid="lastUpdBy"/>
+      <BindItem id="bnd_7" compid="div_BodyContent.form.div_BaseInfo.form.edt_AcqDate" propid="value" datasetid="ds_ScreenData" columnid="acqDate"/>
+      <BindItem id="bnd_8" compid="div_BodyContent.form.div_BaseInfo.form.edt_LicCount" propid="value" datasetid="ds_ScreenData" columnid="licCount"/>
+      <BindItem id="bnd_9" compid="div_BodyContent.form.div_BaseInfo.form.edt_CopySave" propid="value" datasetid="ds_ScreenData" columnid="copySaveFlg"/>
+      <BindItem id="bnd_10" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvDt_1" propid="value" datasetid="ds_ScreenData" columnid="dlvDt_1"/>
+      <BindItem id="bnd_11" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvDt_2" propid="value" datasetid="ds_ScreenData" columnid="dlvDt_2"/>
+      <BindItem id="bnd_12" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvDt_3" propid="value" datasetid="ds_ScreenData" columnid="dlvDt_3"/>
+      <BindItem id="bnd_13" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvShare_1" propid="value" datasetid="ds_ScreenData" columnid="dlvShr_1"/>
+      <BindItem id="bnd_14" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvShare_2" propid="value" datasetid="ds_ScreenData" columnid="dlvShr_2"/>
+      <BindItem id="bnd_15" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvShare_3" propid="value" datasetid="ds_ScreenData" columnid="dlvShr_3"/>
+      <BindItem id="bnd_16" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvInv_1" propid="value" datasetid="ds_ScreenData" columnid="dlvInv_1"/>
+      <BindItem id="bnd_17" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvInv_2" propid="value" datasetid="ds_ScreenData" columnid="dlvInv_2"/>
+      <BindItem id="bnd_18" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvInv_3" propid="value" datasetid="ds_ScreenData" columnid="dlvInv_3"/>
+      <BindItem id="bnd_19" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvRto_1" propid="value" datasetid="ds_ScreenData" columnid="dlvRto_1"/>
+      <BindItem id="bnd_20" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvRto_2" propid="value" datasetid="ds_ScreenData" columnid="dlvRto_2"/>
+      <BindItem id="bnd_21" compid="div_BodyContent.form.div_DlvryResultArea.form.edt_DlvRto_3" propid="value" datasetid="ds_ScreenData" columnid="dlvRto_3"/>
+      <BindItem id="bnd_22" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCust_1" propid="value" datasetid="ds_ScreenData" columnid="bizCust_1"/>
+      <BindItem id="bnd_23" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCust_2" propid="value" datasetid="ds_ScreenData" columnid="bizCust_2"/>
+      <BindItem id="bnd_24" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCust_3" propid="value" datasetid="ds_ScreenData" columnid="bizCust_3"/>
+      <BindItem id="bnd_25" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCust_4" propid="value" datasetid="ds_ScreenData" columnid="bizCust_4"/>
+      <BindItem id="bnd_26" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCust_5" propid="value" datasetid="ds_ScreenData" columnid="bizCust_5"/>
+      <BindItem id="bnd_27" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCShare_1" propid="value" datasetid="ds_ScreenData" columnid="bizCShr_1"/>
+      <BindItem id="bnd_28" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCShare_2" propid="value" datasetid="ds_ScreenData" columnid="bizCShr_2"/>
+      <BindItem id="bnd_29" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCShare_3" propid="value" datasetid="ds_ScreenData" columnid="bizCShr_3"/>
+      <BindItem id="bnd_30" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCShare_4" propid="value" datasetid="ds_ScreenData" columnid="bizCShr_4"/>
+      <BindItem id="bnd_31" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCShare_5" propid="value" datasetid="ds_ScreenData" columnid="bizCShr_5"/>
+      <BindItem id="bnd_32" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCash_1" propid="value" datasetid="ds_ScreenData" columnid="bizCCsh_1"/>
+      <BindItem id="bnd_33" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCash_2" propid="value" datasetid="ds_ScreenData" columnid="bizCCsh_2"/>
+      <BindItem id="bnd_34" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCash_3" propid="value" datasetid="ds_ScreenData" columnid="bizCCsh_3"/>
+      <BindItem id="bnd_35" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCash_4" propid="value" datasetid="ds_ScreenData" columnid="bizCCsh_4"/>
+      <BindItem id="bnd_36" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCash_5" propid="value" datasetid="ds_ScreenData" columnid="bizCCsh_5"/>
+      <BindItem id="bnd_37" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCBill_1" propid="value" datasetid="ds_ScreenData" columnid="bizCBil_1"/>
+      <BindItem id="bnd_38" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCBill_2" propid="value" datasetid="ds_ScreenData" columnid="bizCBil_2"/>
+      <BindItem id="bnd_39" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCBill_3" propid="value" datasetid="ds_ScreenData" columnid="bizCBil_3"/>
+      <BindItem id="bnd_40" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCBill_4" propid="value" datasetid="ds_ScreenData" columnid="bizCBil_4"/>
+      <BindItem id="bnd_41" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCBill_5" propid="value" datasetid="ds_ScreenData" columnid="bizCBil_5"/>
+      <BindItem id="bnd_42" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCycle_1" propid="value" datasetid="ds_ScreenData" columnid="bizCCyc_1"/>
+      <BindItem id="bnd_43" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCycle_2" propid="value" datasetid="ds_ScreenData" columnid="bizCCyc_2"/>
+      <BindItem id="bnd_44" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCycle_3" propid="value" datasetid="ds_ScreenData" columnid="bizCCyc_3"/>
+      <BindItem id="bnd_45" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCycle_4" propid="value" datasetid="ds_ScreenData" columnid="bizCCyc_4"/>
+      <BindItem id="bnd_46" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizCCycle_5" propid="value" datasetid="ds_ScreenData" columnid="bizCCyc_5"/>
+      <BindItem id="bnd_47" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSupp_1" propid="value" datasetid="ds_ScreenData" columnid="bizSupp_1"/>
+      <BindItem id="bnd_48" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSupp_2" propid="value" datasetid="ds_ScreenData" columnid="bizSupp_2"/>
+      <BindItem id="bnd_49" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSupp_3" propid="value" datasetid="ds_ScreenData" columnid="bizSupp_3"/>
+      <BindItem id="bnd_50" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSupp_4" propid="value" datasetid="ds_ScreenData" columnid="bizSupp_4"/>
+      <BindItem id="bnd_51" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSupp_5" propid="value" datasetid="ds_ScreenData" columnid="bizSupp_5"/>
+      <BindItem id="bnd_52" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSShare_1" propid="value" datasetid="ds_ScreenData" columnid="bizSShr_1"/>
+      <BindItem id="bnd_53" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSShare_2" propid="value" datasetid="ds_ScreenData" columnid="bizSShr_2"/>
+      <BindItem id="bnd_54" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSShare_3" propid="value" datasetid="ds_ScreenData" columnid="bizSShr_3"/>
+      <BindItem id="bnd_55" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSShare_4" propid="value" datasetid="ds_ScreenData" columnid="bizSShr_4"/>
+      <BindItem id="bnd_56" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSShare_5" propid="value" datasetid="ds_ScreenData" columnid="bizSShr_5"/>
+      <BindItem id="bnd_57" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCash_1" propid="value" datasetid="ds_ScreenData" columnid="bizSCsh_1"/>
+      <BindItem id="bnd_58" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCash_2" propid="value" datasetid="ds_ScreenData" columnid="bizSCsh_2"/>
+      <BindItem id="bnd_59" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCash_3" propid="value" datasetid="ds_ScreenData" columnid="bizSCsh_3"/>
+      <BindItem id="bnd_60" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCash_4" propid="value" datasetid="ds_ScreenData" columnid="bizSCsh_4"/>
+      <BindItem id="bnd_61" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCash_5" propid="value" datasetid="ds_ScreenData" columnid="bizSCsh_5"/>
+      <BindItem id="bnd_62" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSBill_1" propid="value" datasetid="ds_ScreenData" columnid="bizSBil_1"/>
+      <BindItem id="bnd_63" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSBill_2" propid="value" datasetid="ds_ScreenData" columnid="bizSBil_2"/>
+      <BindItem id="bnd_64" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSBill_3" propid="value" datasetid="ds_ScreenData" columnid="bizSBil_3"/>
+      <BindItem id="bnd_65" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSBill_4" propid="value" datasetid="ds_ScreenData" columnid="bizSBil_4"/>
+      <BindItem id="bnd_66" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSBill_5" propid="value" datasetid="ds_ScreenData" columnid="bizSBil_5"/>
+      <BindItem id="bnd_67" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCycle_1" propid="value" datasetid="ds_ScreenData" columnid="bizSCyc_1"/>
+      <BindItem id="bnd_68" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCycle_2" propid="value" datasetid="ds_ScreenData" columnid="bizSCyc_2"/>
+      <BindItem id="bnd_69" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCycle_3" propid="value" datasetid="ds_ScreenData" columnid="bizSCyc_3"/>
+      <BindItem id="bnd_70" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCycle_4" propid="value" datasetid="ds_ScreenData" columnid="bizSCyc_4"/>
+      <BindItem id="bnd_71" compid="div_BodyContent.form.div_BizPartnerArea.form.edt_BizSCycle_5" propid="value" datasetid="ds_ScreenData" columnid="bizSCyc_5"/>
+      <BindItem id="bnd_72" compid="div_BodyContent.form.div_TextAreaGroup.form.txta_DescHistory" propid="value" datasetid="ds_ScreenData" columnid="historyInfo"/>
+      <BindItem id="bnd_73" compid="div_BodyContent.form.div_TextAreaGroup.form.txta_DescFeature" propid="value" datasetid="ds_ScreenData" columnid="featureInfo"/>
+      <BindItem id="bnd_74" compid="div_BodyContent.form.div_TextAreaGroup.form.txta_DescNextRep" propid="value" datasetid="ds_ScreenData" columnid="nextRepInfo"/>
+    </Bind>
   </Form>
 </FDL>
